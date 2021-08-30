@@ -1,8 +1,12 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import TypoGraphy from "@material-ui/core/Typography";
 
-function Nav() {
+function Nav(props) {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
@@ -55,7 +59,31 @@ function Nav() {
         </Link>
       </h1>
 
-      <nav>{showNavigation()}</nav>
+      <nav>
+        {" "}
+        {/* <List component="nav">
+          <ListItem component="div">
+            <ListItemText inset>
+              <TypoGraphy color="inherit" variant="title">
+                Home
+              </TypoGraphy>
+            </ListItemText>
+
+            <ListItemText inset>
+              <TypoGraphy color="inherit" variant="title">
+                Posts
+              </TypoGraphy>
+            </ListItemText>
+
+            <ListItemText inset>
+              <TypoGraphy color="inherit" variant="title">
+                Contact
+              </TypoGraphy>
+            </ListItemText>
+          </ListItem>
+        </List> */}
+        {showNavigation()}
+      </nav>
     </header>
   );
 }
