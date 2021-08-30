@@ -10,42 +10,30 @@ function Nav(props) {
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
-        <ul className="flex-row">
-          <Link to="/" m={4}>
-            Home
-          </Link>
-          <Link to="/">About</Link>
-          <Link to="/">Menu</Link>
-          <Link to="/">Gallery</Link>
-          <Link to="/">Contact</Link>
-          <li className="mx-1">
-            <Link to="/orderHistory">Order History</Link>
-          </li>
-          <li className="mx-1">
-            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-            <a href="/" onClick={() => Auth.logout()}>
-              Logout
-            </a>
-          </li>
-        </ul>
+        <>
+          <ListItemText inset>
+            <TypoGraphy color="inherit">
+              <Link to="/orderHistory">Order History</Link>
+            </TypoGraphy>
+          </ListItemText>
+          {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+          <ListItemText inset>
+            <TypoGraphy color="inherit">
+              <a href="/" onClick={() => Auth.logout()}>
+                Logout
+              </a>
+            </TypoGraphy>
+          </ListItemText>
+        </>
       );
     } else {
       return (
-        <ul className="flex-row">
-          <Link to="/" m={4}>
-            Home
-          </Link>
-          <Link to="/">About</Link>
-          <Link to="/">Menu</Link>
-          <Link to="/">Gallery</Link>
-          <Link to="/">Contact</Link>
-          <li className="mx-1">
-            <Link to="/signup">Signup</Link>
-          </li>
-          <li className="mx-1">
+        <ListItemText inset>
+          <TypoGraphy color="inherit">
+            <Link to="/signup">Sign Up/</Link>
             <Link to="/login">Login</Link>
-          </li>
-        </ul>
+          </TypoGraphy>
+        </ListItemText>
       );
     }
   }
@@ -60,29 +48,31 @@ function Nav(props) {
       </h1>
 
       <nav>
-        {" "}
-        {/* <List component="nav">
+        <List component="nav">
           <ListItem component="div">
             <ListItemText inset>
-              <TypoGraphy color="inherit" variant="title">
-                Home
+              <TypoGraphy color="inherit">
+                <Link to="/">Home</Link>
               </TypoGraphy>
             </ListItemText>
-
             <ListItemText inset>
-              <TypoGraphy color="inherit" variant="title">
-                Posts
+              <TypoGraphy color="inherit">
+                <Link to="/about">About</Link>
               </TypoGraphy>
             </ListItemText>
-
             <ListItemText inset>
-              <TypoGraphy color="inherit" variant="title">
-                Contact
+              <TypoGraphy color="inherit">
+                <Link to="/menu">Menu</Link>
               </TypoGraphy>
             </ListItemText>
+            <ListItemText inset>
+              <TypoGraphy color="inherit">
+                <Link to="/contact">Contact</Link>
+              </TypoGraphy>
+            </ListItemText>
+            {showNavigation()}
           </ListItem>
-        </List> */}
-        {showNavigation()}
+        </List>
       </nav>
     </header>
   );

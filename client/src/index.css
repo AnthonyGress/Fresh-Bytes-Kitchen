@@ -151,6 +151,21 @@ input:focus {
   flex-wrap: wrap;
 }
 
+.heroImg {
+  background-image: url(./assets/images/chefDrizzle.jpeg);
+  min-height: 100vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .space-between {
   justify-content: space-between;
 }
