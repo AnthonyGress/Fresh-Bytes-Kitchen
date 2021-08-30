@@ -2,7 +2,8 @@ import React from "react";
 import { useStoreContext } from "../../utils/GlobalState";
 import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
-import { IoTrashSharp } from "react-icons/io5";
+// import { IoTrashSharp } from "react-icons/io5";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
@@ -55,7 +56,8 @@ const CartItem = ({ item }) => {
             aria-label="trash"
             onClick={() => removeFromCart(item)}
           >
-            <IoTrashSharp />
+            {/* <IoTrashSharp /> */}
+            <DeleteForeverIcon fontSize="medium" />
           </span>
         </div>
       </div>
