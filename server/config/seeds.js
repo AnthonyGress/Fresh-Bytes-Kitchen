@@ -24,7 +24,7 @@ db.once('open', async () => {
       name: 'Old Fashion',
       description:
         'Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.',
-      image: '',
+      image: 'old-fashioned.jpg',
       category: categories[0]._id,
       price: 12.99,
     },
@@ -32,16 +32,16 @@ db.once('open', async () => {
       name: 'Manhattan',
       description:
         'Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.',
-      image: '',
+      image: 'manhattan.jpg',
       category: categories[0]._id,
-      price: 14.99,
+      price: 10.99,
     },
     {
       name: 'Cosmopolitan',
       category: categories[0]._id,
       description:
         'Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.',
-      image: '',
+      image: 'cosmopolitan.jpg',
       price: 10.99,
     },
     {
@@ -49,15 +49,15 @@ db.once('open', async () => {
       category: categories[0]._id,
       description:
         'Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.',
-      image: '',
+      image: 'moscow-mule.jpg',
       price: 10.99,
     },
     {
-      name: ' Strawberry Gin Sour',
+      name: 'Strawberry Gin Sour',
       category: categories[0]._id,
       description:
         'Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.',
-      image: '',
+      image: 'gin-sour',
       price: 12.99,
     },
     {
@@ -65,7 +65,7 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.',
-      image: '',
+      image: 'orange-blossom.jpg',
       price: 8.99,
     },
     {
@@ -73,38 +73,38 @@ db.once('open', async () => {
       category: categories[1]._id,
       description:
         'In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.',
-      image: 'tablet.jpg',
-      price: 8.99,
+      image: 'mcswaggers.jpg',
+      price: 7.99,
     },
     {
-      name: 'Local Honey (Dunedin Brewing Co.)',
+      name: 'Dunedein Beer Flight',
       category: categories[1]._id,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.',
-      image: 'bedtime-book.jpg',
-      price: 9.99,
+      image: 'dunedin.jpg',
+      price: 18.99,
     },
     {
-      name: 'Frost Proof (Cigar City Brewing Co.)',
+      name: 'Florida Cracker (Cigar City Brewing Co.)',
       category: categories[1]._id,
       description: 'Ut vulputate hendrerit nibh, a placerat elit cursus interdum.',
-      image: 'spinning-top.jpg',
-      price: 1.99,
+      image: 'cigar-city.jpg',
+      price: 7.99,
     },
     {
-      name: 'Palm Bender IPA (Big Storm Brewing Co.)',
+      name: 'Tropic Pressure (Big Storm Brewing Co.)',
       category: categories[1]._id,
       description:
         'Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.',
-      image: 'plastic-horses.jpg',
-      price: 2.99,
+      image: 'tropic-pressure.jpg',
+      price: 7.99,
     },
     {
       name: 'Cabernet Sauvignon',
       category: categories[2]._id,
       description:
         'Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.',
-      image: 'teddy-bear.jpg',
+      image: 'cabernet.jpg',
       price: 13.99,
     },
     {
@@ -112,7 +112,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'merlot.jpg',
       price: 12.99,
     },
     {
@@ -120,7 +120,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'pinot.jpg',
       price: 12.99,
     },
     {
@@ -128,7 +128,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'sauvignon.jpg',
       price: 11.99,
     },
     {
@@ -136,7 +136,7 @@ db.once('open', async () => {
       category: categories[2]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'reisling.jpg',
       price: 11.99,
     },
     {
@@ -144,7 +144,7 @@ db.once('open', async () => {
       category: categories[3]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'korean-wings.jpg',
       price: 11.99,
     },
     {
@@ -152,7 +152,7 @@ db.once('open', async () => {
       category: categories[3]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'edamame.jpg',
       price: 8.99,
     },
     {
@@ -160,7 +160,7 @@ db.once('open', async () => {
       category: categories[3]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'avovado-eggrols.jpg',
       price: 13.99,
     },
     {
@@ -168,15 +168,15 @@ db.once('open', async () => {
       category: categories[3]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 10.99,
+      image: 'truffle.jpg',
+      price: 14.99,
     },
     {
       name: 'Fried Mozzarella',
       category: categories[3]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'fried-mozzarella.jpg',
       price: 10.99,
     },
     {
@@ -184,31 +184,31 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 13.99,
+      image: 'caprese.jpg',
+      price: 12.99,
     },
     {
       name: 'Steak and Burrata',
       category: categories[4]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 15.99,
+      image: 'steak-burrata.jpg',
+      price: 27.99,
     },
     {
       name: 'Lemon Ginger Chicken Skewers',
       category: categories[4]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 9.99,
+      image: 'lemon-chicken.jpg',
+      price: 21.99,
     },
     {
       name: 'Iberico Pork',
       category: categories[4]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'pork.jpg',
       price: 16.99,
     },
     {
@@ -216,7 +216,7 @@ db.once('open', async () => {
       category: categories[4]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'flaming-cheese.jpg',
       price: 9.99,
     },
     {
@@ -224,7 +224,7 @@ db.once('open', async () => {
       category: categories[5]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'lamb.jpg',
       price: 36.99,
     },
     {
@@ -232,7 +232,7 @@ db.once('open', async () => {
       category: categories[5]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'lobster.jpg',
       price: 42.99,
     },
     {
@@ -240,7 +240,7 @@ db.once('open', async () => {
       category: categories[5]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'tuna-poke.jpg',
       price: 29.99,
     },
     {
@@ -248,31 +248,31 @@ db.once('open', async () => {
       category: categories[5]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 34.99,
+      image: 'shrimp-pasta.jpg',
+      price: 30.99,
     },
     {
       name: 'Parmasan Crusted Swordfish Steak',
       category: categories[5]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 39.99,
+      image: 'swordfish.jpg',
+      price: 32.99,
     },
     {
       name: 'Filet Mignon',
       category: categories[6]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
-      price: 37.99,
+      image: 'filet-mignon.jpg',
+      price: 45.99,
     },
     {
       name: 'Cacio De Pepe',
       category: categories[6]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'cacio.jpg',
       price: 25.99,
     },
     {
@@ -280,7 +280,7 @@ db.once('open', async () => {
       category: categories[6]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'salmon.jpg',
       price: 29.99,
     },
     {
@@ -288,23 +288,23 @@ db.once('open', async () => {
       category: categories[6]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'stuffed-chicken.jpg',
       price: 23.99,
     },
     {
-      name: 'Cesar Salad',
+      name: 'Caesar Salad',
       category: categories[6]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'caesar-salad.jpg',
       price: 18.99,
     },
     {
-      name: 'Cheesecake',
+      name: 'Pumpkin Cheesecake',
       category: categories[7]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'cheesecake.jpg',
       price: 12.99,
     },
     {
@@ -312,7 +312,7 @@ db.once('open', async () => {
       category: categories[7]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'chocolate-cake.jpg',
       price: 11.99,
     },
     {
@@ -320,7 +320,7 @@ db.once('open', async () => {
       category: categories[7]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'tiramisu.jpg',
       price: 12.99,
     },
     {
@@ -328,7 +328,7 @@ db.once('open', async () => {
       category: categories[7]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'zeppole.jpg',
       price: 13.99,
     },
     {
@@ -336,7 +336,7 @@ db.once('open', async () => {
       category: categories[7]._id,
       description:
         'Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.',
-      image: 'alphabet-blocks.jpg',
+      image: 'passionfruit.jpg',
       price: 13.99,
     },
 
