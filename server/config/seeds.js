@@ -161,7 +161,7 @@ db.once("open", async () => {
       category: categories[3]._id,
       description:
         "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
-      image: "avovado-eggrols.jpg",
+      image: "avocado-eggrols.jpg",
       price: 13.99,
     },
     {
