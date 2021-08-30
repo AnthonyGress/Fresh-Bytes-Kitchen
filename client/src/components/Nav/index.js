@@ -32,7 +32,8 @@ function Nav(props) {
       return (
         <ListItemText inset>
           <TypoGraphy color="inherit">
-            <Link to="/signup">Sign Up/</Link>
+            <Link to="/signup">Sign Up</Link>
+            {" / "}
             <Link to="/login">Login</Link>
           </TypoGraphy>
         </ListItemText>
