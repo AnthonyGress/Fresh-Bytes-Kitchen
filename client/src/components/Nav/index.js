@@ -26,6 +26,15 @@ function Nav(props) {
           </ListItemText>
         </>
       );
+    } else {
+      return (
+        <ListItemText inset>
+          <TypoGraphy color="inherit" variant="title">
+            <Link to="/signup">Sign Up/</Link>
+            <Link to="/login">Login</Link>
+          </TypoGraphy>
+        </ListItemText>
+      );
     }
   }
 
@@ -61,13 +70,6 @@ function Nav(props) {
                 <Link to="/contact">Contact</Link>
               </TypoGraphy>
             </ListItemText>
-            <ListItemText inset>
-              <TypoGraphy color="inherit" variant="title">
-                <Link to="/signup">Sign Up/</Link>
-                <Link to="/login">Login</Link>
-              </TypoGraphy>
-            </ListItemText>
-
             {showNavigation()}
           </ListItem>
         </List>
