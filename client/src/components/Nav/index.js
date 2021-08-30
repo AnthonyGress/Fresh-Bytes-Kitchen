@@ -46,7 +46,6 @@ function Nav(props) {
           Fresh Bytes Kitchen
         </Link>
       </h1>
-
       <nav>
         <List component="nav">
           <ListItem component="div">

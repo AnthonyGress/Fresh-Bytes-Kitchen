@@ -159,11 +159,13 @@ input:focus {
   -o-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-y: 100%;
   align-items: center;
   justify-content: center;
   display: flex;
   flex-direction: column;
   text-align: center;
+  z-index: -1;
 }
 
 .space-between {
