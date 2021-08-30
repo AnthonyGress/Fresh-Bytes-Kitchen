@@ -12,13 +12,13 @@ function Nav(props) {
       return (
         <>
           <ListItemText inset>
-            <TypoGraphy color="inherit" variant="title">
+            <TypoGraphy color="inherit">
               <Link to="/orderHistory">Order History</Link>
             </TypoGraphy>
           </ListItemText>
           {/* this is not using the Link component to logout or user and then refresh the application to the start */}
           <ListItemText inset>
-            <TypoGraphy color="inherit" variant="title">
+            <TypoGraphy color="inherit">
               <a href="/" onClick={() => Auth.logout()}>
                 Logout
               </a>
@@ -29,7 +29,7 @@ function Nav(props) {
     } else {
       return (
         <ListItemText inset>
-          <TypoGraphy color="inherit" variant="title">
+          <TypoGraphy color="inherit">
             <Link to="/signup">Sign Up/</Link>
             <Link to="/login">Login</Link>
           </TypoGraphy>
@@ -51,22 +51,22 @@ function Nav(props) {
         <List component="nav">
           <ListItem component="div">
             <ListItemText inset>
-              <TypoGraphy color="inherit" variant="title">
+              <TypoGraphy color="inherit">
                 <Link to="/">Home</Link>
               </TypoGraphy>
             </ListItemText>
             <ListItemText inset>
-              <TypoGraphy color="inherit" variant="title">
+              <TypoGraphy color="inherit">
                 <Link to="/about">About</Link>
               </TypoGraphy>
             </ListItemText>
             <ListItemText inset>
-              <TypoGraphy color="inherit" variant="title">
+              <TypoGraphy color="inherit">
                 <Link to="/menu">Menu</Link>
               </TypoGraphy>
             </ListItemText>
             <ListItemText inset>
-              <TypoGraphy color="inherit" variant="title">
+              <TypoGraphy color="inherit">
                 <Link to="/contact">Contact</Link>
               </TypoGraphy>
             </ListItemText>

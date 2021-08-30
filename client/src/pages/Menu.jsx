@@ -1,10 +1,16 @@
 import ProductList from "../components/ProductList";
 import CategoryMenu from "../components/CategoryMenu";
+import Container from "@material-ui/core/Container";
+import Typography from "@material-ui/core/Typography";
 
 const Menu = () => {
   return (
     <section id="menu">
-      <h1>Menu</h1>
+      <Container>
+        <Typography align="center" variant="h3">
+          {"Menu"}
+        </Typography>
+      </Container>
       <CategoryMenu />
       <ProductList />
     </section>
