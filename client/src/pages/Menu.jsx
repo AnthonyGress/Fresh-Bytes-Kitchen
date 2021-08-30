@@ -8,7 +8,6 @@ const Menu = () => {
   return (
     <section id="menu">
       <Container>
-        <Cart />
         <Typography align="center" variant="h3">
           {"Menu"}
         </Typography>

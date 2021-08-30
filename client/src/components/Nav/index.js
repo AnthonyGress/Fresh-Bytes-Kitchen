@@ -1,5 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
+import Cart from "../Cart";
+
 import { Link } from "react-router-dom";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -73,6 +75,7 @@ function Nav(props) {
           </ListItem>
         </List>
       </nav>
+      <Cart />
     </header>
   );
 }
