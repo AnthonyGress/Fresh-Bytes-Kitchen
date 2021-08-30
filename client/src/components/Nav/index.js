@@ -46,13 +46,13 @@ function Nav(props) {
       <h1>
         <Link to="/">
           <span role="img" aria-label="logo"></span>
-          Fresh Bytes Kitchen
+          FBK
         </Link>
       </h1>
       <nav>
         <List component="nav">
           <ListItem component="div">
-            <ListItemText inset>
+            <ListItemText>
               <TypoGraphy color="inherit">
                 <Link to="/">Home</Link>
               </TypoGraphy>
