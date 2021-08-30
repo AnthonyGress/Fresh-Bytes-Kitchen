@@ -1,5 +1,7 @@
 import React from "react";
 import Auth from "../../utils/auth";
+import Cart from "../Cart";
+
 import { Link } from "react-router-dom";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
@@ -30,7 +32,8 @@ function Nav(props) {
       return (
         <ListItemText inset>
           <TypoGraphy color="inherit">
-            <Link to="/signup">Sign Up/</Link>
+            <Link to="/signup">Sign Up</Link>
+            {" / "}
             <Link to="/login">Login</Link>
           </TypoGraphy>
         </ListItemText>
@@ -43,13 +46,13 @@ function Nav(props) {
       <h1>
         <Link to="/">
           <span role="img" aria-label="logo"></span>
-          Fresh Bytes Kitchen
+          FBK
         </Link>
       </h1>
       <nav>
         <List component="nav">
           <ListItem component="div">
-            <ListItemText inset>
+            <ListItemText>
               <TypoGraphy color="inherit">
                 <Link to="/">Home</Link>
               </TypoGraphy>
@@ -73,6 +76,7 @@ function Nav(props) {
           </ListItem>
         </List>
       </nav>
+      <Cart />
     </header>
   );
 }

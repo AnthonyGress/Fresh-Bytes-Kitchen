@@ -9,7 +9,6 @@ const Home = () => {
     <section id="home">
       <Box className="heroImg"></Box>
       <Container>
-        <Cart />
         <Typography align="center" variant="h3">
           {"Home"}
         </Typography>

@@ -65,10 +65,10 @@ const Cart = () => {
   if (!state.cartOpen) {
     return (
       <div className="cart-closed" onClick={toggleCart}>
-        <span role="img" aria-label="trash">
+        <div className="flex-row" role="img" aria-label="cart">
           {/* <RiShoppingCart2Line /> */}
           <ShoppingCartOutlinedIcon fontSize="large" />
-        </span>
+        </div>
       </div>
     );
   }
