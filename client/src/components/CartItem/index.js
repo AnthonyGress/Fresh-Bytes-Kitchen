@@ -57,7 +57,7 @@ const CartItem = ({ item }) => {
             onClick={() => removeFromCart(item)}
           >
             {/* <IoTrashSharp /> */}
-            <DeleteForeverIcon fontSize="medium" />
+            <DeleteForeverIcon fontSize="small" />
           </span>
         </div>
       </div>
