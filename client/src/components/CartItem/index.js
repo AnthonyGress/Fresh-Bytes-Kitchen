@@ -4,6 +4,7 @@ import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 // import { IoTrashSharp } from "react-icons/io5";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import { Container } from "@material-ui/core";
 
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
@@ -36,8 +37,8 @@ const CartItem = ({ item }) => {
 
   return (
     <div className="flex-row">
-      <div>
-        <img src={`/images/${item.image}`} alt="" />
+      <div className="cart-image">
+        <img src={`/images/${item.image}`} alt={item.image} />
       </div>
       <div>
         <div>
@@ -56,7 +57,6 @@ const CartItem = ({ item }) => {
             aria-label="trash"
             onClick={() => removeFromCart(item)}
           >
-            {/* <IoTrashSharp /> */}
             <DeleteForeverIcon fontSize="small" />
           </span>
         </div>
