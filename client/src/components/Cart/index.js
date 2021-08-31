@@ -7,8 +7,9 @@ import CartItem from "../CartItem";
 import Auth from "../../utils/auth";
 import { useStoreContext } from "../../utils/GlobalState";
 import { TOGGLE_CART, ADD_MULTIPLE_TO_CART } from "../../utils/actions";
-// import { RiShoppingCart2Line } from "react-icons/ri";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import IconButton from "@material-ui/core/IconButton";
+
 import "./style.css";
 
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -66,7 +67,6 @@ const Cart = () => {
     return (
       <div className="cart-closed" onClick={toggleCart}>
         <div className="flex-row" role="img" aria-label="cart">
-          {/* <RiShoppingCart2Line /> */}
           <ShoppingCartOutlinedIcon fontSize="large" />
         </div>
       </div>
@@ -75,9 +75,15 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <div className="close" onClick={toggleCart}>
-        [close]
-      </div>
+      <IconButton
+        aria-label="cart of current user"
+        aria-controls="menu-appbar"
+        aria-haspopup="true"
+        onClick={toggleCart}
+        color="inherit"
+      >
+        <ShoppingCartOutlinedIcon />
+      </IconButton>
       <h2>Shopping Cart</h2>
       {state.cart.length ? (
         <div>

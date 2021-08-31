@@ -20,6 +20,7 @@ import OrderHistory from "./pages/OrderHistory";
 import Menu from "./pages/Menu";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Account from "./pages/Account";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -44,7 +45,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <main>
           <StoreProvider>
             <Nav />
             <Switch>
@@ -55,12 +56,13 @@ function App() {
               <Route exact path="/success" component={Success} />
               <Route exact path="/menu" component={Menu} />
               <Route exact path="/contact" component={Contact} />
+              <Route exact path="/account" component={Account} />
               <Route exact path="/orderHistory" component={OrderHistory} />
               <Route exact path="/products/:id" component={Detail} />
               <Route component={NoMatch} />
             </Switch>
           </StoreProvider>
-        </div>
+        </main>
       </Router>
     </ApolloProvider>
   );

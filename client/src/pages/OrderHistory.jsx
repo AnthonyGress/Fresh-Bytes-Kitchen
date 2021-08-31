@@ -13,7 +13,7 @@ function OrderHistory() {
   }
 
   return (
-    <>
+    <section>
       <div className="container my-1">
         <Link to="/menu">← Back to Menu</Link>
 
@@ -45,7 +45,7 @@ function OrderHistory() {
           </>
         ) : null}
       </div>
-    </>
+    </section>
   );
 }
 
