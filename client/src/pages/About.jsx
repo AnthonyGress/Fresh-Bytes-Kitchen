@@ -1,20 +1,16 @@
-import React from "react";
-import Cart from "../components/Cart";
 import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
 
-const Home = () => {
+const About = () => {
   return (
-    <section id="home">
-      <Box className="heroImg"></Box>
+    <section id="about">
       <Container>
         <Typography align="center" variant="h3">
-          {"Home"}
+          {"About"}
         </Typography>
       </Container>
     </section>
   );
 };
 
-export default Home;
+export default About;
