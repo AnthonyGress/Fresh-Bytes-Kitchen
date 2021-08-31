@@ -2,11 +2,14 @@ import React, { useEffect } from "react";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
-
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import { Container } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+import Card from "@material-ui/core/Card";
 
 import CloseIcon from "@material-ui/icons/Close";
 import { loadStripe } from "@stripe/stripe-js";
@@ -18,7 +21,7 @@ import CartItem from "../CartItem";
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_MULTIPLE_TO_CART } from "../../utils/actions";
 import "./style.css";
-const drawerWidth = 240;
+const drawerWidth = 420;
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 const useStyles = makeStyles((theme) => ({
@@ -118,7 +121,9 @@ export default function CartDrawer() {
 
     state.cart.forEach((item) => {
       for (let i = 0; i < item.purchaseQuantity; i++) {
+        // let productObj = { id: item._id, quantity: item.purchaseQuantity };
         productIds.push(item._id);
+        // productIds.push(productObj);
       }
     });
 
@@ -160,33 +165,38 @@ export default function CartDrawer() {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
+        <div
+          className={classes.drawerHeader}
+          style={{ background: "var(--primary)" }}
+        >
           <IconButton onClick={handleDrawerClose}>
-            <CloseIcon />
+            <CloseIcon style={{ color: "var(--light)" }} />
           </IconButton>
         </div>
         <Divider />
-        <Typography align="center" variant="h4">
-          {"Cart"}
-        </Typography>
+        <Box mb={1} mt={1}>
+          <Typography align="center" variant="h4">
+            {"Cart"}
+          </Typography>
+        </Box>
 
         {state.cart.length ? (
-          <div>
-            {state.cart.map((item) => (
-              <CartItem key={item._id} item={item} />
-            ))}
-
-            <div className="flex-row space-between">
-              <strong>Total: ${calculateTotal()}</strong>
-
-              {/* {Auth.loggedIn() ? (
-              <button onClick={submitCheckout}>Checkout</button>
-            ) : (
-              <span>(log in to check out)</span>
-            )} */}
-              <button onClick={submitCheckout}>Checkout</button>
-            </div>
-          </div>
+          <Container>
+            <Grid container spacing={3}>
+              {state.cart.map((item) => (
+                <CartItem key={item._id} item={item} />
+              ))}
+              <div className="flex-row space-between">
+                <strong>Total: ${calculateTotal()}</strong>
+                {/* {Auth.loggedIn() ? (
+                <button onClick={submitCheckout}>Checkout</button>
+              ) : (
+                <span>(log in to check out)</span>
+              )} */}
+                <button onClick={submitCheckout}>Checkout</button>
+              </div>
+            </Grid>
+          </Container>
         ) : (
           <Typography align="center" variant="h5">
             {"Cart is empty"}
