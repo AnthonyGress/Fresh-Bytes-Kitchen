@@ -1,6 +1,5 @@
 import React from "react";
 import Auth from "../../utils/auth";
-import Cart from "../Cart";
 import CartDrawer from "../CartDrawer";
 
 import { Link } from "react-router-dom";
@@ -17,56 +16,8 @@ import Box from "@material-ui/core/Box";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
-import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import Switch from "@material-ui/core/Switch";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormGroup from "@material-ui/core/FormGroup";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-
-// function Nav(props) {
-
-//   return (
-//     <header className="flex-row px-1">
-//       <h1>
-//         <Link to="/">
-//           <span role="img" aria-label="logo"></span>
-//           FBK
-//         </Link>
-//       </h1>
-//       <nav>
-//         <List component="nav">
-//           <ListItem component="div">
-//             <ListItemText>
-//               <TypoGraphy color="inherit">
-//                 <Link to="/">Home</Link>
-//               </TypoGraphy>
-//             </ListItemText>
-//             <ListItemText inset>
-//               <TypoGraphy color="inherit">
-//                 <Link to="/about">About</Link>
-//               </TypoGraphy>
-//             </ListItemText>
-//             <ListItemText inset>
-//               <TypoGraphy color="inherit">
-//                 <Link to="/menu">Menu</Link>
-//               </TypoGraphy>
-//             </ListItemText>
-//             <ListItemText inset>
-//               <TypoGraphy color="inherit">
-//                 <Link to="/contact">Contact</Link>
-//               </TypoGraphy>
-//             </ListItemText>
-//             {showNavigation()}
-//           </ListItem>
-//         </List>
-//       </nav>
-//       <Cart />
-//     </header>
-//   );
-// }
-
-// export default Nav;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -180,15 +131,6 @@ export default function MenuAppBar() {
               <AccountCircle />
             </IconButton>
             <CartDrawer />
-            {/* <IconButton
-              aria-label="cart of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={toggleCart}
-              color="inherit"
-            >
-              <ShoppingCartOutlinedIcon />
-            </IconButton> */}
             <Menu
               id="menu-appbar"
               anchorEl={anchorEl}
