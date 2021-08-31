@@ -19,7 +19,17 @@ const Account = () => {
         <Typography align="center" variant="h3">
           {"My Account"}
         </Typography>
-        <Box></Box>
+        <Box>
+          <Typography align="center" variant="h5">
+            {`${user.firstName} ${user.lastName}`}
+          </Typography>
+          <Typography align="center" variant="h5">
+            {`Account creation date: ${user.createdAt}`}
+          </Typography>
+          <Typography align="center" variant="h5">
+            {`Password last updated: ${user.updatedAt}`}
+          </Typography>
+        </Box>
       </Container>
     </section>
   );
