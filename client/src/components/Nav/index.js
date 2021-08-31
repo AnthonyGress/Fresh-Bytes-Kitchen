@@ -1,6 +1,6 @@
 import React from "react";
 import Auth from "../../utils/auth";
-import CartDrawer from "../CartDrawer";
+import Cart from "../Cart";
 
 import { Link } from "react-router-dom";
 import List from "@material-ui/core/List";
@@ -33,13 +33,13 @@ const useStyles = makeStyles((theme) => ({
 
 export default function MenuAppBar() {
   const classes = useStyles();
-  const [auth, setAuth] = React.useState(true);
+  // const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const handleChange = (event) => {
-    setAuth(event.target.checked);
-  };
+  // const handleChange = (event) => {
+  //   setAuth(event.target.checked);
+  // };
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -130,7 +130,7 @@ export default function MenuAppBar() {
             >
               <AccountCircle />
             </IconButton>
-            <CartDrawer />
+            <Cart />
             <Menu
               id="menu-appbar"
               anchorEl={anchorEl}
