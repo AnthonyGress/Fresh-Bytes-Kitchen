@@ -71,18 +71,16 @@ p {
 }
 
 a {
-  color: var(--tertiary);
+  color: var(--dark);
   text-decoration: none;
   font-weight: bold;
 }
 
 a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 header {
-  background: var(--primary);
-  position: fixed;
   width: 100%;
 }
 
