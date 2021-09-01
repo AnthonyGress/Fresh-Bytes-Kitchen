@@ -1,22 +1,32 @@
-import React, { useEffect } from 'react';
-import { useQuery } from '@apollo/client';
-import { useStoreContext } from '../../utils/GlobalState';
+import React, { useEffect } from "react";
+import { useQuery } from "@apollo/client";
+import { useStoreContext } from "../../utils/GlobalState";
 import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
-} from '../../utils/actions';
-import { QUERY_CATEGORIES } from '../../utils/queries';
-import { idbPromise } from '../../utils/helpers';
-import { makeStyles } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import Typography from '@material-ui/core/Typography';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+} from "../../utils/actions";
+import ProductList from "../ProductList";
+import { QUERY_CATEGORIES } from "../../utils/queries";
+import { idbPromise } from "../../utils/helpers";
+import { makeStyles } from "@material-ui/core/styles";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import Typography from "@material-ui/core/Typography";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import { Container } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   catOption: {
-    backgroundColor: '#ffcd27',
+    backgroundColor: "#c82427",
+    borderRadius: '30px 30px 30px 30px'
+  },
+  catOptionDetails: {
+    backgroundColor: "#ffcd27",
+  },
+  catOptionTitle: {
+    color: "#ffcd27",
+    fontSize: "2em"
   },
 }));
 
@@ -24,6 +34,7 @@ function CategoryMenu() {
   const classes = useStyles();
 
   const [state, dispatch] = useStoreContext();
+  const [expanded, setExpanded] = React.useState(false);
 
   const { categories } = state;
 
@@ -36,10 +47,10 @@ function CategoryMenu() {
         categories: categoryData.categories,
       });
       categoryData.categories.forEach((category) => {
-        idbPromise('categories', 'put', category);
+        idbPromise("categories", "put", category);
       });
     } else if (!loading) {
-      idbPromise('categories', 'get').then((categories) => {
+      idbPromise("categories", "get").then((categories) => {
         dispatch({
           type: UPDATE_CATEGORIES,
           categories: categories,
@@ -47,6 +58,10 @@ function CategoryMenu() {
       });
     }
   }, [categoryData, loading, dispatch]);
+
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpanded(isExpanded ? panel : false);
+  };
 
   const handleClick = (id) => {
     dispatch({
@@ -69,28 +84,96 @@ function CategoryMenu() {
   //     ))}
   //   </div>
 
+  // <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+  //       <AccordionSummary
+  //         expandIcon={<ExpandMoreIcon />}
+  //         aria-controls="panel1bh-content"
+  //         id="panel1bh-header"
+  //       >
+  //         <Typography className={classes.heading}>General settings</Typography>
+  //         <Typography className={classes.secondaryHeading}>I am an accordion</Typography>
+  //       </AccordionSummary>
+  //       <AccordionDetails>
+  //         <Typography>
+  //           Nulla facilisi. Phasellus sollicitudin nulla et quam mattis feugiat. Aliquam eget
+  //           maximus est, id dignissim quam.
+  //         </Typography>
+  //       </AccordionDetails>
+  //     </Accordion>
+
+  // {categories.map((item) => (
+  //   <Accordion key={item._id} className={classes.catOption} onClick={() => {
+  //        handleClick(item._id);
+  //      }}>
+  //     <AccordionSummary
+  //       expandIcon={<ExpandMoreIcon />}
+  //       aria-controls="panel1a-content"
+  //       id={item.name}
+  //     >
+  //       <Typography>{item.name}</Typography>
+  //     </AccordionSummary>
+  //     <AccordionDetails>
+  //       <ProductList />
+  //     </AccordionDetails>
+  //   </Accordion>
+  // ))}
+
+  // {categories.map((item) => (
+  //   <Accordion
+  //     expanded={expanded === item.name}
+  //     onChange={handleChange(item.name)}
+  //     key={item._id}
+  //     className={classes.catOption}
+  //     onClick={() => {
+  //       handleClick(item._id);
+  //     }}
+  //   >
+  //     <AccordionSummary
+  //       expandIcon={<ExpandMoreIcon />}
+  //       aria-controls="panel1bh-content"
+  //       id={item.name}
+  //     >
+  //       <Typography className={classes.catOptionTitle}>{item.name}</Typography>
+  //     </AccordionSummary>
+  //     <AccordionDetails className={classes.catOptionDetails}>
+  //       <Typography>
+  //         <ProductList />
+  //       </Typography>
+  //     </AccordionDetails>
+  //   </Accordion>
+  // ))}
+
   return (
     <div>
-      <h2 align='center'>Choose a Category:</h2>
-      {categories.map((item) => (
-        <Accordion key={item._id} className={classes.catOption} onClick={() => {
-             handleClick(item._id);
-           }}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id={item.name}
+      <Typography align="center" variant="h3" style={{marginTop: "5rem"}}>Choose a Category:</Typography>
+      <Container maxWidth="lg" style={{marginTop: "8rem"}}>
+        {categories.map((item) => (
+          <Accordion
+            expanded={expanded === item.name}
+            onChange={handleChange(item.name)}
+            key={item._id}
+            className={classes.catOption}
+            onClick={() => {
+              handleClick(item._id);
+            }}
           >
-            <Typography>{item.name}</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex,
-              sit amet blandit leo lobortis eget.
-            </Typography>
-          </AccordionDetails>
-        </Accordion>
-      ))}
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id={item.name}
+            >
+              <Typography className={classes.catOptionTitle}>
+                {item.name}
+              </Typography>
+            </AccordionSummary>
+              <AccordionDetails className={classes.catOptionDetails}>
+                <Typography>
+                  <ProductList />
+                </Typography>
+              </AccordionDetails>
+          </Accordion>
+        ))}
+      </Container>
     </div>
   );
 }
