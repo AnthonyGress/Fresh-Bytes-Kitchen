@@ -117,8 +117,8 @@ li {
   list-style: none;
 }
 
-section {
-  padding-top: 64px;
+h3 {
+  padding-top: 84px;
 }
 
 span[role="img"] {
@@ -234,6 +234,30 @@ input:focus {
 
 .error-text {
   color: var(--error);
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-content-center {
+  align-content: center;
+}
+.align-items-center {
+  align-items: center;
+}
+.col {
+  flex-direction: column;
+}
+
+#menu {
+  background: url(../src/assets/images/red-restaurant.jpg) ;
+  background-size: cover;
+  height: 100vh;
 }
 
 @media screen and (max-width: 768px) {

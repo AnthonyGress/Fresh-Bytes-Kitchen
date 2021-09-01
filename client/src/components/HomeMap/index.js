@@ -1,7 +1,7 @@
-import React from 'react';
-import { GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react';
-import Paper from '@material-ui/core/Paper'
-import Typography from '@material-ui/core/Typography';
+import React from "react";
+import {GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react-17'
+import Paper from "@material-ui/core/Paper";
+import Typography from "@material-ui/core/Typography";
 
 class GoogleMapsContainer extends React.Component {
   constructor(props) {
@@ -9,8 +9,8 @@ class GoogleMapsContainer extends React.Component {
     this.state = {
       showingInfoWindow: false,
       activeMarker: {},
-      selectedPlace: {}
-    }
+      selectedPlace: {},
+    };
     // binding this to event-handler functions
 
   }
@@ -22,17 +22,17 @@ class GoogleMapsContainer extends React.Component {
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
-      showingInfoWindow: true
+      showingInfoWindow: true,
     });
-  }
+  };
   onMapClick = (props) => {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
-        activeMarker: null
+        activeMarker: null,
       });
     }
-  }
+  };
   render() {
     const style = {
       width: '40vw',
@@ -59,14 +59,14 @@ class GoogleMapsContainer extends React.Component {
         initialCenter = {{ lat: 28.571934, lng: -81.235870 }}
       >
         <Marker
-          onClick = { this.onMarkerClick }
-          title = { 'Fresh Bytes Kitchen' }
-          position = {{ lat: 28.571934, lng: -81.235870 }}
-          name = { 'Fresh Bytes Kitchen' }
+          onClick={this.onMarkerClick}
+          title={"Fresh Bytes Kitchen"}
+          position={{ lat: 28.571934, lng: -81.23587 }}
+          name={"Fresh Bytes Kitchen"}
         />
         <InfoWindow
-          marker = { this.state.activeMarker }
-          visible = { this.state.showingInfoWindow }
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}
         >
           <Paper>
             <Typography
@@ -74,9 +74,7 @@ class GoogleMapsContainer extends React.Component {
             >
               Fresh Bytes Kitchen
             </Typography>
-            <Typography
-              component = 'p'
-            >
+            <Typography component="p">
               98G Union Park, Fl 19702 <br />
               302-293-8627
             </Typography>
@@ -88,5 +86,5 @@ class GoogleMapsContainer extends React.Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyDWCeNY_dm5Zigp44gdpZtYIftFPKrveTo'
-})(GoogleMapsContainer)
+  apiKey: "AIzaSyDWCeNY_dm5Zigp44gdpZtYIftFPKrveTo",
+})(GoogleMapsContainer);
