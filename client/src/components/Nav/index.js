@@ -1,19 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Auth from "../../utils/auth";
 import Cart from "../Cart";
+import HamburgerMenu from "../HamburgerMenu";
 
 import { Link } from "react-router-dom";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import TypoGraphy from "@material-ui/core/Typography";
+import {
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  makeStyles,
+  Typography,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core";
 
-import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -32,6 +37,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MenuAppBar() {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const [openDrawer, setOpenDrawer] = useState(false);
+
   const classes = useStyles();
   // const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -82,72 +91,115 @@ export default function MenuAppBar() {
     <div className={classes.root}>
       <AppBar position="fixed" style={{ background: "var(--primary" }}>
         <Toolbar>
-          <IconButton
+          {isMobile ? (
+            <>
+              <HamburgerMenu />
+              <div
+                style={{
+                  position: "absolute",
+                  right: "2%",
+                }}
+              >
+                <IconButton
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="inherit"
+                >
+                  <AccountCircle fontSize="large" />
+                </IconButton>
+                <Cart />
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={open}
+                  onClose={handleClose}
+                >
+                  {userActions()}
+                </Menu>
+              </div>
+            </>
+          ) : (
+            <>
+              <Typography variant="h6" className={classes.title}>
+                FBK
+              </Typography>
+              <Box style={{ margin: "auto" }}>
+                <List component="nav">
+                  <ListItem component="div">
+                    <ListItemText>
+                      <Typography color="inherit">
+                        <Link to="/">Home</Link>
+                      </Typography>
+                    </ListItemText>
+                    <ListItemText inset>
+                      <Typography color="inherit">
+                        <Link to="/about">About</Link>
+                      </Typography>
+                    </ListItemText>
+                    <ListItemText inset>
+                      <Typography color="inherit">
+                        <Link to="/menu">Menu</Link>
+                      </Typography>
+                    </ListItemText>
+                    <ListItemText inset>
+                      <Typography color="inherit">
+                        <Link to="/contact">Contact</Link>
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
+                </List>
+              </Box>
+              <div>
+                <IconButton
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleMenu}
+                  color="inherit"
+                >
+                  <AccountCircle fontSize="large" />
+                </IconButton>
+                <Cart />
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorEl}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={open}
+                  onClose={handleClose}
+                >
+                  {userActions()}
+                </Menu>
+              </div>
+            </>
+          )}
+          {/* <IconButton
+            onClick={() => setOpenDrawer(!openDrawer)}
             edge="start"
             className={classes.menuButton}
             color="inherit"
             aria-label="menu"
           >
             <MenuIcon fontSize="large" />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            FBK
-          </Typography>
-          <Box style={{ margin: "auto" }}>
-            <List component="nav">
-              <ListItem component="div">
-                <ListItemText>
-                  <TypoGraphy color="inherit">
-                    <Link to="/">Home</Link>
-                  </TypoGraphy>
-                </ListItemText>
-                <ListItemText inset>
-                  <TypoGraphy color="inherit">
-                    <Link to="/about">About</Link>
-                  </TypoGraphy>
-                </ListItemText>
-                <ListItemText inset>
-                  <TypoGraphy color="inherit">
-                    <Link to="/menu">Menu</Link>
-                  </TypoGraphy>
-                </ListItemText>
-                <ListItemText inset>
-                  <TypoGraphy color="inherit">
-                    <Link to="/contact">Contact</Link>
-                  </TypoGraphy>
-                </ListItemText>
-              </ListItem>
-            </List>
-          </Box>
-          <div>
-            <IconButton
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleMenu}
-              color="inherit"
-            >
-              <AccountCircle fontSize="large" />
-            </IconButton>
-            <Cart />
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "right",
-              }}
-              open={open}
-              onClose={handleClose}
-            >
-              {userActions()}
-            </Menu>
-          </div>
+          </IconButton> */}
         </Toolbar>
       </AppBar>
     </div>
