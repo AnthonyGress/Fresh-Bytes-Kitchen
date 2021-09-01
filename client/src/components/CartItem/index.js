@@ -88,7 +88,7 @@ const CartItem = ({ item }) => {
           </Box>
         </Box>
       </Paper> */}
-      <Card>
+      <Card elevation={8}>
         <CardHeader
           title={item.name}
           align="center"

@@ -200,7 +200,7 @@ export default function CartDrawer() {
             <Typography align="center" variant="h6">
               {`Total: $${calculateTotal()}`}
             </Typography>
-            <Box mb={2}>
+            <Box mb={3} boxShadow={5}>
               <Button
                 variant="contained"
                 style={{ background: "var(--secondary)", minHeight: "36px" }}
