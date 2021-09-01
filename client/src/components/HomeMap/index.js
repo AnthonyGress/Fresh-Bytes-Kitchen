@@ -12,9 +12,12 @@ class GoogleMapsContainer extends React.Component {
       selectedPlace: {}
     }
     // binding this to event-handler functions
+
+  }
+  componentDidMount() {
     this.onMarkerClick = this.onMarkerClick.bind(this);
     this.onMapClick = this.onMapClick.bind(this);
-  }
+    }
   onMarkerClick = (props, marker, e) => {
     this.setState({
       selectedPlace: props,
@@ -32,16 +35,24 @@ class GoogleMapsContainer extends React.Component {
   }
   render() {
     const style = {
-      width: '50vw',
-      height: '75vh',
+      width: '40vw',
+      height: '60vh',
       'marginLeft': 'auto',
       'marginRight': 'auto'
     }
+
+    const containerStyle = {
+      position: 'relative',  
+      width: '100%',
+      height: '100%'
+    }
+
     return (
       <Map
         item
         xs = { 12 }
         style = { style }
+        containerStyle={ containerStyle }
         google = { this.props.google }
         onClick = { this.onMapClick }
         zoom = { 14 }
@@ -59,8 +70,7 @@ class GoogleMapsContainer extends React.Component {
         >
           <Paper>
             <Typography
-              variant = 'headline'
-              component = 'h4'
+              variant = 'h4'
             >
               Fresh Bytes Kitchen
             </Typography>
