@@ -4,31 +4,15 @@ import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 // import { IoTrashSharp } from "react-icons/io5";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
-import { Container, Icon, IconButton, Input } from "@material-ui/core";
+import { IconButton, Input } from "@material-ui/core";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
-import clsx from "clsx";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  },
-}));
 
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
@@ -59,8 +43,6 @@ const CartItem = ({ item }) => {
     }
   };
 
-  const classes = useStyles();
-
   return (
     <Grid item xs={6}>
       {/* <Paper className={classes.paper} style={{ height: "100%" }}>
@@ -88,7 +70,7 @@ const CartItem = ({ item }) => {
           </Box>
         </Box>
       </Paper> */}
-      <Card>
+      <Card elevation={6}>
         <CardHeader
           title={item.name}
           align="center"

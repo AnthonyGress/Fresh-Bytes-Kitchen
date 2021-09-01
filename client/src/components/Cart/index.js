@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import Card from "@material-ui/core/Card";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import CloseIcon from "@material-ui/icons/Close";
@@ -168,7 +167,7 @@ export default function CartDrawer() {
         onClick={handleDrawerOpen}
         className={clsx(open && classes.hide)}
       >
-        <ShoppingCartOutlinedIcon />
+        <ShoppingCartOutlinedIcon fontSize="large" />
       </IconButton>
 
       <Drawer
@@ -180,14 +179,14 @@ export default function CartDrawer() {
           paper: classes.drawerPaper,
         }}
       >
-        <div
+        <Box
           className={classes.drawerHeader}
           style={{ background: "var(--primary)" }}
         >
           <IconButton onClick={handleDrawerClose}>
-            <CloseIcon style={{ color: "var(--light)" }} />
+            <CloseIcon style={{ color: "var(--light)" }} fontSize="large" />
           </IconButton>
-        </div>
+        </Box>
         <Divider />
         <Box mb={1} mt={1}>
           <Typography align="center" variant="h4">
@@ -200,7 +199,7 @@ export default function CartDrawer() {
             <Typography align="center" variant="h6">
               {`Total: $${calculateTotal()}`}
             </Typography>
-            <Box mb={2}>
+            <Box mb={3} boxShadow={5}>
               <Button
                 variant="contained"
                 style={{ background: "var(--secondary)", minHeight: "36px" }}
@@ -225,7 +224,7 @@ export default function CartDrawer() {
                 )}
               </Button>
             </Box>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
               {state.cart.map((item) => (
                 <CartItem key={item._id} item={item} />
               ))}
