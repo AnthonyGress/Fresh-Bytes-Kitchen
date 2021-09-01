@@ -1,9 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
+import {
+  Container,
+  Box,
+  Button,
+  Typography,
+  Card,
+  CardMedia,
+  Paper,
+  useTheme,
+  useMediaQuery,
+} from "@material-ui/core/";
+import { makeStyles } from "@material-ui/core/styles";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
+
+const useStyles = makeStyles((theme) => ({
+  card: { maxWidth: "300px" },
+  media: {
+    height: 250,
+    width: 300,
+    paddingTop: "56.25%", // 16:9
+  },
+  box: {
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+  },
+  row: {
+    display: "flex",
+    justifyContent: "space-evenly",
+    flexWrap: "wrap",
+  },
+}));
 
 function OrderHistory() {
   const { data } = useQuery(QUERY_USER);
@@ -12,39 +42,59 @@ function OrderHistory() {
   if (data) {
     user = data.user;
   }
+  const theme = useTheme();
+  const classes = useStyles();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <section>
-      <div className="container my-1">
-        <Link to="/menu">← Back to Menu</Link>
-
-        {user ? (
-          <>
-            <Typography align="center" variant="h3">
-              {`Order History for ${user.firstName} ${user.lastName}`}
-            </Typography>
+      {user ? (
+        <>
+          <Typography align="center" variant="h3">
+            {`Order History for ${user.firstName} ${user.lastName}`}
+          </Typography>
+          <Box ml={3} mr={3} mt={2}>
             {user.orders.map((order) => (
-              <div key={order._id} className="my-2">
-                <h3>
-                  {new Date(parseInt(order.purchaseDate)).toLocaleDateString()}
-                </h3>
-                <div className="flex-row">
-                  {order.products.map(({ _id, image, name, price }, index) => (
-                    <div key={index} className="card px-1 py-1">
-                      <Link to={`/products/${_id}`}>
-                        <img alt={name} src={`/images/${image}`} />
-                        <p>{name}</p>
-                      </Link>
-                      <div>
-                        <span>${price}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <Box key={order._id} mb={4}>
+                <Paper>
+                  <Box pt={2} pb={2}>
+                    <Typography variant="h4" align="center">
+                      {"Order on "}
+                      {new Date(
+                        parseInt(order.purchaseDate)
+                      ).toLocaleDateString()}
+                    </Typography>
+                  </Box>
+                  <Box className={isMobile ? classes.box : classes.row}>
+                    {order.products.map(
+                      ({ _id, image, name, price, quantity }, index) => (
+                        <Box mt={1} mb={2} key={index}>
+                          <Card className={classes.card} elevation={8}>
+                            <Link to={`/products/${_id}`}>
+                              <CardMedia
+                                image={`/images/${image}`}
+                                className={classes.media}
+                              ></CardMedia>
+                            </Link>
+                            <Box className={classes.box} pt={1}>
+                              <Typography variant="h6">
+                                {name} {quantity && `x ${quantity}`}
+                              </Typography>
+                              <Box pb={1}>
+                                <span>${price}</span>
+                              </Box>
+                            </Box>
+                          </Card>
+                        </Box>
+                      )
+                    )}
+                  </Box>
+                </Paper>
+              </Box>
             ))}
-          </>
-        ) : null}
-      </div>
+          </Box>
+        </>
+      ) : null}
     </section>
   );
 }
