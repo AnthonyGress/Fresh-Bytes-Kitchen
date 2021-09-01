@@ -55,11 +55,27 @@ function CategoryMenu() {
     });
   };
 
+  // <div>
+  //     <h2>Choose a Category:</h2>
+  //     {categories.map((item) => (
+  //       <button
+  //         key={item._id}
+  //         onClick={() => {
+  //           handleClick(item._id);
+  //         }}
+  //       >
+  //         {item.name}
+  //       </button>
+  //     ))}
+  //   </div>
+
   return (
     <div>
       <h2 align='center'>Choose a Category:</h2>
       {categories.map((item) => (
-        <Accordion className={classes.catOption}>
+        <Accordion key={item._id} className={classes.catOption} onClick={() => {
+             handleClick(item._id);
+           }}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
