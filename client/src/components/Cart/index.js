@@ -9,7 +9,6 @@ import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import Card from "@material-ui/core/Card";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 import CloseIcon from "@material-ui/icons/Close";
