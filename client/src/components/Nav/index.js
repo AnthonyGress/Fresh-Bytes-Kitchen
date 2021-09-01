@@ -88,7 +88,7 @@ export default function MenuAppBar() {
             color="inherit"
             aria-label="menu"
           >
-            <MenuIcon />
+            <MenuIcon fontSize="large" />
           </IconButton>
           <Typography variant="h6" className={classes.title}>
             FBK
