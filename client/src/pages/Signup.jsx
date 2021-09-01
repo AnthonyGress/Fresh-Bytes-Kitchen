@@ -90,7 +90,7 @@ function Signup(props) {
                 onChange={handleChange}
                 label="First Name"
                 multiline
-                color="secondary"
+                color="primary"
                 required={true}
               />
               <TextField
@@ -101,7 +101,7 @@ function Signup(props) {
                 onChange={handleChange}
                 label="Last Name"
                 multiline
-                color="secondary"
+                color="primary"
                 required={true}
               />
               <TextField
@@ -112,7 +112,7 @@ function Signup(props) {
                 onChange={handleChange}
                 label="Email"
                 multiline
-                color="secondary"
+                color="primary"
                 required={true}
               />
               <TextField
@@ -123,17 +123,20 @@ function Signup(props) {
                 onChange={handleChange}
                 label="Password"
                 multiline
-                color="secondary"
+                color="primary"
                 required={true}
               />
             </Box>
-            <Button
-              type="submit"
-              style={{ background: "var(--secondary)" }}
-              fullWidth={true}
-            >
-              {"Submit"}
-            </Button>
+            <Box boxShadow={5} mt={4}>
+              <Button
+                type="submit"
+                color="secondary"
+                variant="contained"
+                fullWidth={true}
+              >
+                {"Submit"}
+              </Button>
+            </Box>
           </form>
         </Card>
       </Container>
