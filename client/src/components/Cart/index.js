@@ -225,7 +225,7 @@ export default function CartDrawer() {
                 )}
               </Button>
             </Box>
-            <Grid container spacing={3}>
+            <Grid container spacing={4}>
               {state.cart.map((item) => (
                 <CartItem key={item._id} item={item} />
               ))}
