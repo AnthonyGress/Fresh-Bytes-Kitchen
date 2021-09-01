@@ -11,6 +11,7 @@ import {
   InputAdornment,
   TextField,
 } from "@material-ui/core/";
+import { Alert } from "@material-ui/lab/";
 import EmailIcon from "@material-ui/icons/Email";
 import LockIcon from "@material-ui/icons/Lock";
 import { makeStyles } from "@material-ui/core/styles";
@@ -123,6 +124,11 @@ function Login(props) {
                 }}
               />
             </Box>
+            {error ? (
+              <Alert severity="error">
+                The provided credentials are incorrect
+              </Alert>
+            ) : null}
             <Box boxShadow={5} mt={4}>
               <Button
                 type="submit"
