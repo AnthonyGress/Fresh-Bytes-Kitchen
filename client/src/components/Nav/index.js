@@ -18,6 +18,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
+// user check
+import { useQuery } from "@apollo/client";
+import { QUERY_USER } from "../../utils/queries";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,11 +35,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function MenuAppBar() {
+  const { data } = useQuery(QUERY_USER);
+  let user;
+
+  if (data) {
+    user = data.user;
+  }
+  console.log(user);
   const classes = useStyles();
   // const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-
   // const handleChange = (event) => {
   //   setAuth(event.target.checked);
   // };

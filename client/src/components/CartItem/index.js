@@ -4,6 +4,31 @@ import { REMOVE_FROM_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 // import { IoTrashSharp } from "react-icons/io5";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+import { Container, Icon, IconButton, Input } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import Card from "@material-ui/core/Card";
+import CardHeader from "@material-ui/core/CardHeader";
+import CardMedia from "@material-ui/core/CardMedia";
+import CardContent from "@material-ui/core/CardContent";
+import CardActions from "@material-ui/core/CardActions";
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ShareIcon from "@material-ui/icons/Share";
+import clsx from "clsx";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+}));
 
 const CartItem = ({ item }) => {
   const [, dispatch] = useStoreContext();
@@ -34,34 +59,92 @@ const CartItem = ({ item }) => {
     }
   };
 
+  const classes = useStyles();
+
   return (
-    <div className="flex-row">
-      <div>
-        <img src={`/images/${item.image}`} alt="" />
-      </div>
-      <div>
-        <div>
-          {item.name}, ${item.price}
-        </div>
-        <div>
-          <span>Qty:</span>
-          <input
-            type="number"
-            placeholder="1"
-            value={item.purchaseQuantity}
-            onChange={onChange}
+    <Grid item xs={6}>
+      {/* <Paper className={classes.paper} style={{ height: "100%" }}>
+        <Box className="cart-image">
+          <img
+            src={`/images/${item.image}`}
+            alt={item.image}
+            style={{ maxHeight: "190px" }}
           />
-          <span
-            role="img"
-            aria-label="trash"
-            onClick={() => removeFromCart(item)}
+          <Typography style={{ width: "100%" }}>{item.name}</Typography>
+          <Typography>${item.price}</Typography>
+        </Box>
+        <Box style={{ height: "100%" }}>
+          <Box style={{ display: "flex" }}>
+            <Input
+              type="number"
+              placeholder="1"
+              value={item.purchaseQuantity}
+              onChange={onChange}
+              color="secondary"
+            />
+            <IconButton aria-label="trash" onClick={() => removeFromCart(item)}>
+              <DeleteForeverIcon fontSize="small" style={{ color: "white" }} />
+            </IconButton>
+          </Box>
+        </Box>
+      </Paper> */}
+      <Card>
+        <CardHeader
+          title={item.name}
+          align="center"
+          titleTypographyProps={{ noWrap: true, variant: "subtitle1" }}
+        />
+
+        {/* <Typography noWrap="true" align="center" variant="h5">
+          {item.name}
+        </Typography> */}
+        <CardMedia
+          component="img"
+          image={`/images/${item.image}`}
+          title={item.name}
+          alt={item.name}
+          height="140"
+        />
+        <CardContent>
+          <Typography
+            variant="body1"
+            color="textPrimary"
+            component="p"
+            align="center"
           >
-            {/* <IoTrashSharp /> */}
-            <DeleteForeverIcon fontSize="small" />
-          </span>
-        </div>
-      </div>
-    </div>
+            ${item.price}
+          </Typography>
+        </CardContent>
+        <CardActions disableSpacing>
+          {/* <IconButton aria-label="add to favorites">
+            <FavoriteIcon />
+          </IconButton>
+          <IconButton aria-label="share">
+            <ShareIcon />
+          </IconButton> */}
+          <Box>
+            <Box style={{ display: "flex" }}>
+              <Input
+                type="number"
+                placeholder="1"
+                value={item.purchaseQuantity}
+                onChange={onChange}
+                color="secondary"
+              />
+              <IconButton
+                aria-label="trash"
+                onClick={() => removeFromCart(item)}
+              >
+                <DeleteForeverIcon
+                  fontSize="small"
+                  // style={{ color: "white" }}
+                />
+              </IconButton>
+            </Box>
+          </Box>
+        </CardActions>
+      </Card>
+    </Grid>
   );
 };
 

@@ -11,7 +11,7 @@ function OrderHistory() {
   if (data) {
     user = data.user;
   }
-
+  console.log(user);
   return (
     <section>
       <div className="container my-1">
