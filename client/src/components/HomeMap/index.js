@@ -1,5 +1,5 @@
 import React from "react";
-import { GoogleApiWrapper, InfoWindow, Map, Marker } from "google-maps-react";
+import {GoogleApiWrapper, InfoWindow, Map, Marker } from 'google-maps-react-17'
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
 
