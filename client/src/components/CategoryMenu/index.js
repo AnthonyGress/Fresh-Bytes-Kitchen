@@ -13,15 +13,15 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Icon } from "@material-ui/core";
+
 import "./style.css";
 
 const useStyles = makeStyles({
   catOption: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center"
+    backgroundColor: '#ffcd27'
   },
-})
+});
 
 function CategoryMenu() {
   const classes = useStyles();
@@ -59,15 +59,17 @@ function CategoryMenu() {
   };
 
   return (
-    <div className={classes.root}>
+    <div>
       <h2 align='center'>Choose a Category:</h2>
       {categories.map((item) => (
-        <Accordion>
+        <Accordion className={classes.catOption}>
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id={item.name}
+            align='center'
           >
+              <img src={item.icon} alt={item.name}/>
             <Typography>{item.name}</Typography>
           </AccordionSummary>
           <AccordionDetails>
