@@ -180,14 +180,14 @@ export default function CartDrawer() {
           paper: classes.drawerPaper,
         }}
       >
-        <div
+        <Box
           className={classes.drawerHeader}
           style={{ background: "var(--primary)" }}
         >
           <IconButton onClick={handleDrawerClose}>
             <CloseIcon style={{ color: "var(--light)" }} fontSize="large" />
           </IconButton>
-        </div>
+        </Box>
         <Divider />
         <Box mb={1} mt={1}>
           <Typography align="center" variant="h4">

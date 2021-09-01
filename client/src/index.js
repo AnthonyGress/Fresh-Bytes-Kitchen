@@ -9,12 +9,16 @@ import * as serviceWorker from "./serviceWorker";
 const theme = createTheme({
   palette: {
     primary: {
-      light: "#fff",
       main: "#c82427",
-      dark: "#000",
     },
     secondary: {
       main: "#ffcd27",
+    },
+    light: {
+      main: "#fafafa",
+    },
+    dark: {
+      main: "#0a0a0a",
     },
   },
   typography: {
