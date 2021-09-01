@@ -5,7 +5,6 @@ import HamburgerMenu from "../HamburgerMenu";
 
 import { Link } from "react-router-dom";
 import {
-  Drawer,
   IconButton,
   List,
   ListItem,
@@ -19,7 +18,7 @@ import {
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Box from "@material-ui/core/Box";
-import MenuIcon from "@material-ui/icons/Menu";
+
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
@@ -47,7 +46,6 @@ export default function MenuAppBar() {
 
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-  const [openDrawer, setOpenDrawer] = useState(false);
 
   const classes = useStyles();
   // const [auth, setAuth] = React.useState(true);
