@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Typography } from "@material-ui/core";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_USER } from "../utils/queries";
@@ -11,7 +12,6 @@ function OrderHistory() {
   if (data) {
     user = data.user;
   }
-  console.log(user);
   return (
     <section>
       <div className="container my-1">
@@ -19,9 +19,9 @@ function OrderHistory() {
 
         {user ? (
           <>
-            <h2>
-              Order History for {user.firstName} {user.lastName}
-            </h2>
+            <Typography align="center" variant="h3">
+              {`Order History for ${user.firstName} ${user.lastName}`}
+            </Typography>
             {user.orders.map((order) => (
               <div key={order._id} className="my-2">
                 <h3>

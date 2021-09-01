@@ -8,11 +8,9 @@ import { QUERY_USER } from "../utils/queries";
 const Account = () => {
   const { data } = useQuery(QUERY_USER);
   let user;
-
   if (data) {
     user = data.user;
   }
-  console.log(user);
   // format date helper
   const formatDate = (timestamp) => new Date(parseInt(timestamp));
   const createdAt = formatDate(user.createdAt).toLocaleString();
