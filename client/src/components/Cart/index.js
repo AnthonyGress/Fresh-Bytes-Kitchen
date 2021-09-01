@@ -4,12 +4,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import { Container } from "@material-ui/core";
+import { Container, Button } from "@material-ui/core";
 import Typography from "@material-ui/core/Typography";
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import Card from "@material-ui/core/Card";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 import CloseIcon from "@material-ui/icons/Close";
 import { loadStripe } from "@stripe/stripe-js";
@@ -117,6 +118,12 @@ export default function CartDrawer() {
   }
 
   function submitCheckout() {
+    if (!loading) {
+      setLoading(true);
+      timer.current = window.setTimeout(() => {
+        setLoading(false);
+      }, 10000);
+    }
     const productIds = [];
 
     state.cart.forEach((item) => {
@@ -143,6 +150,14 @@ export default function CartDrawer() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
+
+  const [loading, setLoading] = React.useState(false);
+  const timer = React.useRef();
+  React.useEffect(() => {
+    return () => {
+      clearTimeout(timer.current);
+    };
+  }, []);
 
   return (
     <>
@@ -182,19 +197,45 @@ export default function CartDrawer() {
 
         {state.cart.length ? (
           <Container>
+            <Typography align="center" variant="h6">
+              {`Total: $${calculateTotal()}`}
+            </Typography>
+            <Box mb={2}>
+              <Button
+                variant="contained"
+                style={{ background: "var(--secondary)", minHeight: "36px" }}
+                fullWidth={true}
+                disabled={loading}
+                onClick={submitCheckout}
+              >
+                {loading ? (
+                  <CircularProgress
+                    size={25}
+                    style={{
+                      color: "var(--primary)",
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      marginTop: -12,
+                      marginLeft: -12,
+                    }}
+                  />
+                ) : (
+                  "Proceed to Checkout"
+                )}
+              </Button>
+            </Box>
             <Grid container spacing={3}>
               {state.cart.map((item) => (
                 <CartItem key={item._id} item={item} />
               ))}
-              <div className="flex-row space-between">
-                <strong>Total: ${calculateTotal()}</strong>
-                {/* {Auth.loggedIn() ? (
+              {/* <strong>Total: ${calculateTotal()}</strong> */}
+              {/* {Auth.loggedIn() ? (
                 <button onClick={submitCheckout}>Checkout</button>
               ) : (
                 <span>(log in to check out)</span>
               )} */}
-                <button onClick={submitCheckout}>Checkout</button>
-              </div>
+              {/* <button onClick={submitCheckout}>Checkout</button> */}
             </Grid>
           </Container>
         ) : (
