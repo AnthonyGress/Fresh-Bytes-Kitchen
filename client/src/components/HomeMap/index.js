@@ -16,11 +16,11 @@ class GoogleMapsContainer extends React.Component {
     this.onMapClick = this.onMapClick.bind(this);
   }
   onMarkerClick = (props, marker, e) => {
-    // this.setState({
-    //   selectedPlace: props,
-    //   activeMarker: marker,
-    //   showingInfoWindow: true
-    // });
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true,
+    });
   };
   onMapClick = (props) => {
     if (this.state.showingInfoWindow) {
