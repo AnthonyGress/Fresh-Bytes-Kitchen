@@ -168,7 +168,7 @@ export default function CartDrawer() {
         onClick={handleDrawerOpen}
         className={clsx(open && classes.hide)}
       >
-        <ShoppingCartOutlinedIcon />
+        <ShoppingCartOutlinedIcon fontSize="large" />
       </IconButton>
 
       <Drawer
@@ -185,7 +185,7 @@ export default function CartDrawer() {
           style={{ background: "var(--primary)" }}
         >
           <IconButton onClick={handleDrawerClose}>
-            <CloseIcon style={{ color: "var(--light)" }} />
+            <CloseIcon style={{ color: "var(--light)" }} fontSize="large" />
           </IconButton>
         </div>
         <Divider />

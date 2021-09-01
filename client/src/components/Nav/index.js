@@ -127,7 +127,7 @@ export default function MenuAppBar() {
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle fontSize="large" />
             </IconButton>
             <Cart />
             <Menu
