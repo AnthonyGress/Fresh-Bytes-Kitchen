@@ -4,9 +4,20 @@ import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { ADD_USER } from "../utils/mutations";
 import TextField from "@material-ui/core/TextField";
-import { Container, Box, Button, Typography, Card } from "@material-ui/core/";
+import {
+  Container,
+  Box,
+  Button,
+  Typography,
+  Card,
+  InputAdornment,
+} from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 // import { styled } from "@material-ui/core/styles";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import EmailIcon from "@material-ui/icons/Email";
+import LockIcon from "@material-ui/icons/Lock";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -28,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 // });
 function Signup(props) {
   const classes = useStyles();
+  const matches = useMediaQuery("(min-width:600px)"); // Variable for media query
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [addUser] = useMutation(ADD_USER);
 
@@ -58,14 +70,13 @@ function Signup(props) {
       <Typography align="center" variant="h3">
         {"Sign Up"}
       </Typography>
-      <Link to="/login">
-        <Typography style={{ color: "var(--light" }}>
-          {"← Go to Login"}
-        </Typography>
-      </Link>
       <Container
         className="d-flex justify-content-center"
-        style={{ width: "50%", marginTop: "5%" }}
+        style={
+          matches
+            ? { width: "60%", marginTop: "5%" }
+            : { width: "80%", marginTop: "5%" }
+        }
       >
         <Card
           style={{
@@ -81,9 +92,12 @@ function Signup(props) {
             className={classes.root}
             autoComplete="off"
             onSubmit={handleFormSubmit}
+            style={{ width: "90%" }}
           >
             <Box className="d-flex align-items-center col">
               <TextField
+                style={{ width: "100%" }}
+                variant="outlined"
                 placeholder="First"
                 name="firstName"
                 type="firstName"
@@ -93,8 +107,17 @@ function Signup(props) {
                 multiline
                 color="primary"
                 required={true}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <AccountCircle />
+                    </InputAdornment>
+                  ),
+                }}
               />
               <TextField
+                style={{ width: "100%" }}
+                variant="outlined"
                 placeholder="Last"
                 name="lastName"
                 type="lastName"
@@ -104,28 +127,52 @@ function Signup(props) {
                 multiline
                 color="primary"
                 required={true}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <AccountCircle />
+                    </InputAdornment>
+                  ),
+                }}
               />
               <TextField
-                placeholder="Password"
-                name="password"
-                type="password"
-                id="pwd"
-                onChange={handleChange}
-                label="Email"
-                multiline
-                color="primary"
-                required={true}
-              />
-              <TextField
+                style={{ width: "100%" }}
+                variant="outlined"
                 placeholder="Email"
                 name="email"
                 type="email"
                 id="email"
                 onChange={handleChange}
-                label="Password"
+                label="Email"
                 multiline
                 color="primary"
                 required={true}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <EmailIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <TextField
+                style={{ width: "100%" }}
+                variant="outlined"
+                placeholder="Password"
+                name="password"
+                type="password"
+                id="pwd"
+                onChange={handleChange}
+                label="Password"
+                color="primary"
+                required={true}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LockIcon />
+                    </InputAdornment>
+                  ),
+                }}
               />
             </Box>
             <Box boxShadow={5} mt={4}>

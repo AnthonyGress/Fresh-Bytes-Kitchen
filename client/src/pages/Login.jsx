@@ -3,8 +3,32 @@ import { useMutation } from "@apollo/client";
 import { Link } from "react-router-dom";
 import { LOGIN } from "../utils/mutations";
 import Auth from "../utils/auth";
+import {
+  Container,
+  Box,
+  Button,
+  Typography,
+  Card,
+  InputAdornment,
+  TextField,
+} from "@material-ui/core/";
+import AccountCircle from "@material-ui/icons/AccountCircle";
+import EmailIcon from "@material-ui/icons/Email";
+import LockIcon from "@material-ui/icons/Lock";
+import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .MuiTextField-root": {
+      margin: theme.spacing(1),
+      width: 200,
+    },
+  },
+}));
 
 function Login(props) {
+  const classes = useStyles();
   const [formState, setFormState] = useState({ email: "", password: "" });
   const [login, { error }] = useMutation(LOGIN);
 
@@ -29,9 +53,92 @@ function Login(props) {
     });
   };
 
+  const matches = useMediaQuery("(min-width:600px)"); // Variable for media query
+
   return (
     <section>
-      <div className="container">
+      <Typography align="center" variant="h3">
+        {"Log In"}
+      </Typography>
+      <Container
+        className="d-flex justify-content-center"
+        style={
+          matches
+            ? { width: "60%", marginTop: "5%" }
+            : { width: "80%", marginTop: "5%" }
+        }
+      >
+        <Card
+          style={{
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            display: "flex",
+            paddingTop: "5%",
+            paddingBottom: "5%",
+          }}
+        >
+          <form
+            className={classes.root}
+            autoComplete="off"
+            onSubmit={handleFormSubmit}
+            style={{ width: "90%" }}
+          >
+            <Box className="d-flex align-items-center col">
+              <TextField
+                style={{ width: "100%" }}
+                variant="outlined"
+                placeholder="Email"
+                name="email"
+                type="email"
+                id="email"
+                onChange={handleChange}
+                label="Email"
+                multiline
+                color="primary"
+                required={true}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <EmailIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <TextField
+                style={{ width: "100%" }}
+                variant="outlined"
+                placeholder="Password"
+                name="password"
+                type="password"
+                id="pwd"
+                onChange={handleChange}
+                label="Password"
+                color="primary"
+                required={true}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LockIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+            </Box>
+            <Box boxShadow={5} mt={4}>
+              <Button
+                type="submit"
+                color="secondary"
+                variant="contained"
+                fullWidth={true}
+              >
+                {"Submit"}
+              </Button>
+            </Box>
+          </form>
+        </Card>
+      </Container>
+      {/* <div className="container">
         <Link to="/signup">← Go to Signup</Link>
         <h2>Login</h2>
         <form onSubmit={handleFormSubmit}>
@@ -66,7 +173,7 @@ function Login(props) {
             <button type="submit">Submit</button>
           </div>
         </form>
-      </div>
+      </div> */}
     </section>
   );
 }
