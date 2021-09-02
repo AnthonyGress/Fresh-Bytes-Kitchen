@@ -17,6 +17,7 @@ import AccountCircle from "@material-ui/icons/AccountCircle";
 import EmailIcon from "@material-ui/icons/Email";
 import LockIcon from "@material-ui/icons/Lock";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { Alert } from "@material-ui/lab/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,20 +41,25 @@ function Signup(props) {
   const classes = useStyles();
   const matches = useMediaQuery("(min-width:600px)"); // Variable for media query
   const [formState, setFormState] = useState({ email: "", password: "" });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
 
   const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: {
-        email: formState.email,
-        password: formState.password,
-        firstName: formState.firstName,
-        lastName: formState.lastName,
-      },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+    try {
+      event.preventDefault();
+
+      const mutationResponse = await addUser({
+        variables: {
+          email: formState.email,
+          password: formState.password,
+          firstName: formState.firstName,
+          lastName: formState.lastName,
+        },
+      });
+      const token = mutationResponse.data.addUser.token;
+      Auth.login(token);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const handleChange = (event) => {
@@ -103,7 +109,6 @@ function Signup(props) {
                 id="firstName"
                 onChange={handleChange}
                 label="First Name"
-                multiline
                 color="primary"
                 required={true}
                 InputProps={{
@@ -123,7 +128,6 @@ function Signup(props) {
                 id="lastName"
                 onChange={handleChange}
                 label="Last Name"
-                multiline
                 color="primary"
                 required={true}
                 InputProps={{
@@ -143,7 +147,6 @@ function Signup(props) {
                 id="email"
                 onChange={handleChange}
                 label="Email"
-                multiline
                 color="primary"
                 required={true}
                 InputProps={{
@@ -174,6 +177,11 @@ function Signup(props) {
                 }}
               />
             </Box>
+            {error ? (
+              <Alert severity="error">
+                Could not create new user. Please try again
+              </Alert>
+            ) : null}
             <Box boxShadow={5} mt={4}>
               <Button
                 type="submit"

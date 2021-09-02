@@ -93,7 +93,6 @@ function Login(props) {
                 id="email"
                 onChange={handleChange}
                 label="Email"
-                multiline
                 color="primary"
                 required={true}
                 InputProps={{
