@@ -20,6 +20,7 @@
     "prettier": "^2.1.2"
   },
   "dependencies": {
+    "concurrently": "^5.1.0",
     "@apollo/client": "^3.4.10",
     "apollo-client": "^2.6.10"
   }
