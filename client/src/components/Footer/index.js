@@ -35,7 +35,7 @@ export default function Footer() {
       <Box>
         <Container maxWidth="lg">
           <Grid container spacing={5}>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={4} style={{ maxHeight: "7rem" }}>
               <Box borderBottom={1}>
                 <Typography align="center">Help</Typography>
               </Box>
@@ -55,22 +55,27 @@ export default function Footer() {
                 </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={4} style={{ maxHeight: "7rem" }}>
               <Box borderBottom={1}>
                 <Typography align="center">Restaurant Hours</Typography>
               </Box>
-              <Box>
-                <Typography color="inherit" align="center">
-                  Closed Monday
-                </Typography>
-              </Box>
-              <Box>
-                <Typography color="inherit" align="center">
-                  Tuesday through Sunday, 11:00 AM - 12:00 AM
-                </Typography>
+              <Box
+                className={classes.flexWrapper}
+                style={{ flexDirection: "column" }}
+              >
+                <Box>
+                  <Typography color="inherit" align="center">
+                    Closed Monday
+                  </Typography>
+                </Box>
+                <Box>
+                  <Typography color="inherit" align="center">
+                    Tuesday - Sunday, 11:00 AM - 12:00 AM
+                  </Typography>
+                </Box>
               </Box>
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid item xs={12} sm={4} style={{ maxHeight: "7rem" }}>
               <Box borderBottom={1}>
                 <Typography align="center">Socials</Typography>
               </Box>
