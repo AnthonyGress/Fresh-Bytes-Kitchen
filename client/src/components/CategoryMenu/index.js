@@ -15,18 +15,20 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Container } from "@material-ui/core";
+import Wood from "../../assets/images/black-wood.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   catOption: {
     backgroundColor: "#c82427",
     borderRadius: "30px 30px 30px 30px",
   },
-  catOptionDetails: {
-    backgroundColor: "#ffcd27",
+  catOptionProducts: {
+    backgroundImage: `url(${Wood})`,
   },
   catOptionTitle: {
     color: "#ffcd27",
     fontSize: "2em",
+    fontFamily: "'Courgette', cursive",
   },
 }));
 
@@ -145,10 +147,7 @@ function CategoryMenu() {
 
   return (
     <div>
-      <Typography align="center" variant="h3" style={{ marginTop: "5rem" }}>
-        Choose a Category:
-      </Typography>
-      <Container maxWidth="lg" style={{ marginTop: "8rem" }}>
+      <Container maxWidth="lg" style={{ marginTop: "5rem" }}>
         {categories.map((item) => (
           <Accordion
             expanded={expanded === item.name}
@@ -168,7 +167,7 @@ function CategoryMenu() {
                 {item.name}
               </Typography>
             </AccordionSummary>
-            <AccordionDetails className={classes.catOptionDetails}>
+            <AccordionDetails className={classes.catOptionProducts}>
               <ProductList />
             </AccordionDetails>
           </Accordion>

@@ -21,6 +21,7 @@ import Menu from "./pages/Menu";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Account from "./pages/Account";
+import Footer from "./components/Footer"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -61,6 +62,7 @@ function App() {
               <Route exact path="/products/:id" component={Detail} />
               <Route component={NoMatch} />
             </Switch>
+            <Footer />
           </StoreProvider>
         </main>
       </Router>

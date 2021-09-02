@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <section id="home">
       <Box className="heroImg"></Box>
-      <Paper className={classes.paper}>
+      {/* <Paper className={classes.paper}>
         <Grid container spacing={2}>
           <Grid item xs={8}>
             <HomeMap />
@@ -38,7 +38,7 @@ const Home = () => {
           <Grid item xs={6} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid item>
-                <Typography gutterBottom variant="h4">
+                <Typography gutterBottom borderBottom={1} variant="h4">
                   Restaraunt Hours
                 </Typography>
                 <Typography variant="body2" gutterBottom>
@@ -66,7 +66,7 @@ const Home = () => {
             </Grid>
           </Grid>
         </Grid>
-      </Paper>
+      </Paper> */}
     </section>
   );
 };
