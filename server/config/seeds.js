@@ -41,7 +41,7 @@ db.once("open", async () => {
       category: categories[0]._id,
       description:
         "Vodka, Triple sec, Cranberry juice, Fresh Lime Juice.",
-      image: "cosmopolitan.jpg",
+      image: "strawberry-cosmopolitan.jpeg",
       price: 10.99,
     },
     {
@@ -65,7 +65,7 @@ db.once("open", async () => {
       category: categories[1]._id,
       description:
         "Honey Beer Made With Real, Local Orange Blossom Honey. //4.5% ABV//",
-      image: "orange-blossom.jpg",
+      image: "obp.jpeg",
       price: 8.99,
     },
     {
@@ -73,7 +73,7 @@ db.once("open", async () => {
       category: categories[1]._id,
       description:
         "American Amber Ale. //6.0% ABV//",
-      image: "mcswaggers.jpg",
+      image: "mcswaggers-own-2.jpeg",
       price: 7.99,
     },
     {
@@ -81,7 +81,7 @@ db.once("open", async () => {
       category: categories[1]._id,
       description:
         "Apricot Peach Ale //6.0% ABV//, Red Head Red Ale //5.6% ABV//, and Local Honey //8.0% ABV//. ",
-      image: "dunedin.jpg",
+      image: "dunedin-brewing.png",
       price: 18.99,
     },
     {
@@ -89,7 +89,7 @@ db.once("open", async () => {
       category: categories[1]._id,
       description:
         "White Ale With Unmalted Wheat, Orange Peel and Coriander. //5.5% ABV//",
-      image: "cigar-city.jpg",
+      image: "florida-cracker-2.jpeg",
       price: 7.99,
     },
     {
@@ -97,7 +97,7 @@ db.once("open", async () => {
       category: categories[1]._id,
       description:
         "Florida Ale Steeped With Hibiscus Flowers And A Hint Of Cinnamon. //4.4% ABV//",
-      image: "tropic-pressure.jpg",
+      image: "tropic-pressure-2.jpeg",
       price: 7.99,
     },
     {
@@ -113,7 +113,7 @@ db.once("open", async () => {
       category: categories[2]._id,
       description:
         "Red-Fruit Flavours (Cherry, Plum and Raspberry), Easy-Drinking Tannins and Super-Soft Finish.",
-      image: "merlot.jpg",
+      image: "merlot-2.jpeg",
       price: 12.99,
     },
     {
@@ -121,7 +121,7 @@ db.once("open", async () => {
       category: categories[2]._id,
       description:
         "Bright Acidity, Silky Tannins, Cherry, Raspberry, Mushroom Plus Vanilla",
-      image: "pinot.jpg",
+      image: "pinot-noir-2.jpeg",
       price: 12.99,
     },
     {
@@ -129,7 +129,7 @@ db.once("open", async () => {
       category: categories[2]._id,
       description:
         "Dry White With Tropical, Tree And Citrus Fruit Flavors",
-      image: "sauvignon.jpg",
+      image: "sauvignon-blanc-2.jpeg",
       price: 11.99,
     },
     {
@@ -137,7 +137,7 @@ db.once("open", async () => {
       category: categories[2]._id,
       description:
         "Aromatic White Wine That Boasts Crisp Flavors Of Apples, Apricots, Peaches, And Pears.",
-      image: "reisling.jpg",
+      image: "riesling-2.jpeg",
       price: 11.99,
     },
     {
@@ -145,7 +145,7 @@ db.once("open", async () => {
       category: categories[3]._id,
       description:
         "Double Fried, Crunchy, And Crispy Korean Chicken Wings Covered in Either Sweet Gochujang Sauce or Sticky Soy Garlic Sauce",
-      image: "korean-wings.jpg",
+      image: "korean-chicken-wings.jpeg",
       price: 11.99,
     },
     {
@@ -161,7 +161,7 @@ db.once("open", async () => {
       category: categories[3]._id,
       description:
         "Avocado, Sun-Dried Tomato, Red Onion and Cilantro Fried in a Crisp Wrapper. Served with a Tamarind-Cashew Dipping Sauce.",
-      image: "avocado-eggrolls.jpg",
+      image: "avocado-egg-rolls-2.jpeg",
       price: 13.99,
     },
     {
@@ -177,7 +177,7 @@ db.once("open", async () => {
       category: categories[3]._id,
       description:
         "Golden Fried Mozzarella Mixed With Italian Herbs",
-      image: "fried-mozzarella.jpg",
+      image: "fried-mozzarella-2.jpeg",
       price: 10.99,
     },
     {
@@ -185,7 +185,7 @@ db.once("open", async () => {
       category: categories[4]._id,
       description:
         "Layers Of Cherry Tomato, Basil Leaf, And Marinated Mozzarella On A Skewer With Balsamic Glaze.",
-      image: "caprese.jpg",
+      image: "caprese-spears-2.jpeg",
       price: 12.99,
     },
     {
@@ -193,7 +193,7 @@ db.once("open", async () => {
       category: categories[4]._id,
       description:
         "Creamy Burrata On Top Of Garlicky Sourdough Toasts, And Perfectly Cooked Hanger Steak Topped With Pepper Flakes, Chives And A Drizzle Of Balsamic Vinegar.",
-      image: "steak-burrata.jpg",
+      image: "steak-crustini.jpeg",
       price: 27.99,
     },
     {
@@ -237,11 +237,11 @@ db.once("open", async () => {
       price: 42.99,
     },
     {
-      name: "Tuna and Yellow-Tail Poke",
+      name: "Yellow-Fin Tuna Poke",
       category: categories[5]._id,
       description:
         "Diced cucumbers, Chilies, and Avocado Mixed with Roasted Sesame Yellow-Fin Tuna. All Served Over Sushi Rice",
-      image: "tuna-poke.jpg",
+      image: "poke-2.jpeg",
       price: 29.99,
     },
     {
@@ -257,7 +257,7 @@ db.once("open", async () => {
       category: categories[5]._id,
       description:
         "Crispy Parmesan Swordfish With Creamy Garlic Aioli Dipping Sauce",
-      image: "swordfish.jpg",
+      image: "swordfish-2.jpeg",
       price: 32.99,
     },
     {
@@ -281,7 +281,7 @@ db.once("open", async () => {
       category: categories[6]._id,
       description:
         "Salmon Fillets In A Tangy glaze - Sprinkle With Sesame Seeds.",
-      image: "salmon.jpg",
+      image: "honey-sesame-salmon.jpeg",
       price: 29.99,
     },
     {
