@@ -42,6 +42,7 @@ function OrderHistory() {
   if (data) {
     user = data.user;
   }
+  console.log(user);
   const theme = useTheme();
   const classes = useStyles();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -63,6 +64,7 @@ function OrderHistory() {
                       {new Date(
                         parseInt(order.purchaseDate)
                       ).toLocaleDateString()}
+                      {` - Total: $${order.total}`}
                     </Typography>
                   </Box>
                   <Box className={isMobile ? classes.box : classes.row}>

@@ -12,6 +12,7 @@ const typeDefs = gql`
     description: String
     image: String
     quantity: Int
+    purchaseQuantity: Int
     price: Float
     category: Category
     createdAt: String
@@ -21,6 +22,7 @@ const typeDefs = gql`
   type Order {
     _id: ID
     purchaseDate: String
+    total: Float
     products: [Product]
   }
 
@@ -59,7 +61,7 @@ const typeDefs = gql`
       email: String!
       password: String!
     ): Auth
-    addOrder(products: [ID]!): Order
+    addOrder(products: [ID]!, total: Float!): Order
     updateUser(
       firstName: String
       lastName: String

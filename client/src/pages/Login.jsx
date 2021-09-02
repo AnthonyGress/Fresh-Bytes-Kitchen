@@ -85,6 +85,7 @@ function Login(props) {
           >
             <Box className="d-flex align-items-center col">
               <TextField
+                autoComplete="email"
                 style={{ width: "100%" }}
                 variant="outlined"
                 placeholder="Email"
@@ -104,6 +105,7 @@ function Login(props) {
                 }}
               />
               <TextField
+                autoComplete="password"
                 style={{ width: "100%" }}
                 variant="outlined"
                 placeholder="Password"

@@ -15,21 +15,20 @@ import AccordionDetails from "@material-ui/core/AccordionDetails";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Container } from "@material-ui/core";
-import Wood from '../../assets/images/black-wood.jpeg';
-
+import Wood from "../../assets/images/black-wood.jpeg";
 
 const useStyles = makeStyles((theme) => ({
   catOption: {
     backgroundColor: "#c82427",
-    borderRadius: '30px 30px 30px 30px'
+    borderRadius: "30px 30px 30px 30px",
   },
   catOptionProducts: {
-     backgroundImage: `url(${Wood})`
+    backgroundImage: `url(${Wood})`,
   },
   catOptionTitle: {
     color: "#ffcd27",
     fontSize: "2em",
-    fontFamily: "'Courgette', cursive"
+    fontFamily: "'Courgette', cursive",
   },
 }));
 
@@ -148,30 +147,30 @@ function CategoryMenu() {
 
   return (
     <div>
-      <Container maxWidth="lg" style={{marginTop: "5rem"}}>
+      <Container maxWidth="lg" style={{ marginTop: "5rem" }}>
         {categories.map((item) => (
-            <Accordion
-              expanded={expanded === item.name}
-              onChange={handleChange(item.name)}
-              key={item._id}
-              className={classes.catOption}
-              onClick={() => {
-                handleClick(item._id);
-              }}
+          <Accordion
+            expanded={expanded === item.name}
+            onChange={handleChange(item.name)}
+            key={item._id}
+            className={classes.catOption}
+            onClick={() => {
+              handleClick(item._id);
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1bh-content"
+              id={item.name}
             >
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon />}
-                aria-controls="panel1bh-content"
-                id={item.name}
-              >
-                <Typography className={classes.catOptionTitle}>
-                  {item.name}
-                </Typography>
-              </AccordionSummary>
-                <AccordionDetails className={classes.catOptionProducts}>
-                    <ProductList />
-                </AccordionDetails>
-            </Accordion>
+              <Typography className={classes.catOptionTitle}>
+                {item.name}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className={classes.catOptionProducts}>
+              <ProductList />
+            </AccordionDetails>
+          </Accordion>
         ))}
       </Container>
     </div>

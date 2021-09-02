@@ -59,6 +59,7 @@ export const QUERY_USER = gql`
       updatedAt
       orders {
         _id
+        total
         purchaseDate
         products {
           _id
@@ -66,6 +67,7 @@ export const QUERY_USER = gql`
           description
           price
           quantity
+          purchaseQuantity
           image
         }
       }

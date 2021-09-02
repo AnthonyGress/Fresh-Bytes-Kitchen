@@ -23,6 +23,9 @@ const productSchema = new Schema(
     quantity: {
       type: Number,
     },
+    purchaseQuantity: {
+      type: Number,
+    },
     category: {
       type: Schema.Types.ObjectId,
       ref: "Category",

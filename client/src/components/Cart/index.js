@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import clsx from "clsx";
@@ -21,7 +21,7 @@ import { idbPromise } from "../../utils/helpers";
 import CartItem from "../CartItem";
 // import Auth from "../../utils/auth";
 import { useStoreContext } from "../../utils/GlobalState";
-import { ADD_MULTIPLE_TO_CART } from "../../utils/actions";
+import { ADD_MULTIPLE_TO_CART, CLEAR_CART } from "../../utils/actions";
 import "./style.css";
 const drawerWidth = 420;
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -86,6 +86,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CartDrawer() {
   const [state, dispatch] = useStoreContext();
   const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     if (data) {
@@ -110,11 +111,16 @@ export default function CartDrawer() {
   //   dispatch({ type: TOGGLE_CART });
   // }
 
+  function clearCart() {
+    dispatch({ type: CLEAR_CART });
+  }
+
   function calculateTotal() {
     let sum = 0;
     state.cart.forEach((item) => {
       sum += item.price * item.purchaseQuantity;
     });
+    // setTotal(sum.toFixed(2));
     return sum.toFixed(2);
   }
 
@@ -123,7 +129,7 @@ export default function CartDrawer() {
       setLoading(true);
       timer.current = window.setTimeout(() => {
         setLoading(false);
-      }, 10000);
+      }, 12000);
     }
     const productIds = [];
 
@@ -238,6 +244,9 @@ export default function CartDrawer() {
               )} */}
               {/* <button onClick={submitCheckout}>Checkout</button> */}
             </Grid>
+            <Box>
+              <Button onClick={clearCart}>Clear Cart</Button>
+            </Box>
           </Container>
         ) : (
           <>

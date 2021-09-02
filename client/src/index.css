@@ -1,6 +1,6 @@
 :root {
   --primary: #c82427;
-  --secondary: #a9b027;
+  --secondary: #ffcd27;
   --tertiary: #b12704;
   --light: #fafafa;
   --dark: #272f32;
@@ -111,6 +111,10 @@ button[disabled] {
 
 img {
   max-width: 100%;
+}
+
+section {
+  min-height: 82vh;
 }
 
 li {
@@ -255,7 +259,7 @@ input:focus {
 }
 
 #menu {
-  background: url(../src/assets/images/red-restaurant.jpg) ;
+  background: url(../src/assets/images/red-restaurant.jpg);
   background-size: cover;
   min-height: 100vh;
 }
