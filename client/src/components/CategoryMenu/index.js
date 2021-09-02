@@ -19,14 +19,14 @@ import { Container } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   catOption: {
     backgroundColor: "#c82427",
-    borderRadius: '30px 30px 30px 30px'
+    borderRadius: "30px 30px 30px 30px",
   },
   catOptionDetails: {
     backgroundColor: "#ffcd27",
   },
   catOptionTitle: {
     color: "#ffcd27",
-    fontSize: "2em"
+    fontSize: "2em",
   },
 }));
 
@@ -145,8 +145,10 @@ function CategoryMenu() {
 
   return (
     <div>
-      <Typography align="center" variant="h3" style={{marginTop: "5rem"}}>Choose a Category:</Typography>
-      <Container maxWidth="lg" style={{marginTop: "8rem"}}>
+      <Typography align="center" variant="h3" style={{ marginTop: "5rem" }}>
+        Choose a Category:
+      </Typography>
+      <Container maxWidth="lg" style={{ marginTop: "8rem" }}>
         {categories.map((item) => (
           <Accordion
             expanded={expanded === item.name}
@@ -166,11 +168,9 @@ function CategoryMenu() {
                 {item.name}
               </Typography>
             </AccordionSummary>
-              <AccordionDetails className={classes.catOptionDetails}>
-                <Typography>
-                  <ProductList />
-                </Typography>
-              </AccordionDetails>
+            <AccordionDetails className={classes.catOptionDetails}>
+              <ProductList />
+            </AccordionDetails>
           </Accordion>
         ))}
       </Container>
