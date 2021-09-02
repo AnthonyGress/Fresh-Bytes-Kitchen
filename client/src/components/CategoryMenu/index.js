@@ -17,6 +17,7 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Container } from "@material-ui/core";
 import Wood from "../../assets/images/black-wood.jpeg";
 
+
 const useStyles = makeStyles((theme) => ({
   catOption: {
     backgroundColor: "#c82427",
@@ -72,6 +73,9 @@ function CategoryMenu() {
     });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo(0,250);
+  }
   // <div>
   //     <h2>Choose a Category:</h2>
   //     {categories.map((item) => (
@@ -156,6 +160,7 @@ function CategoryMenu() {
             className={classes.catOption}
             onClick={() => {
               handleClick(item._id);
+              scrollToTop();
             }}
           >
             <AccordionSummary

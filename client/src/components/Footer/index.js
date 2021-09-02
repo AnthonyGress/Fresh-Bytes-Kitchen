@@ -31,7 +31,7 @@ export default function Footer() {
   const classes = useStyles();
 
   return (
-    <footer>
+    <footer style={{paddingTop: "2rem"}}>
       <Box>
         <Container maxWidth="lg">
           <Grid container spacing={5}>
