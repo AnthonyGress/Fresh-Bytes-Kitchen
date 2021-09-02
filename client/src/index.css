@@ -1,6 +1,6 @@
 :root {
   --primary: #c82427;
-  --secondary: #ffcd27;
+  --secondary: #a9b027;
   --tertiary: #b12704;
   --light: #fafafa;
   --dark: #272f32;
@@ -257,7 +257,7 @@ input:focus {
 #menu {
   background: url(../src/assets/images/red-restaurant.jpg) ;
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
