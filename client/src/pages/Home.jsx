@@ -1,11 +1,11 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Typography from "@material-ui/core/Typography";
-import HomeMap from "../components/HomeMap"
-import Paper from '@material-ui/core/Paper'
+import HomeMap from "../components/HomeMap";
+import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-
+import HeroCard from "../components/HeroCard";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,19 +16,19 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
     maxWidth: 1300,
     height: 650,
-    marginTop: "auto"
+    marginTop: "auto",
   },
   dividerInset: {
     margin: `5px 0 0 ${theme.spacing(9)}px`,
   },
 }));
 
-
 const Home = () => {
   const classes = useStyles();
 
   return (
     <section id="home">
+      {/* <HeroCard /> */}
       <Box className="heroImg"></Box>
       {/* <Paper className={classes.paper}>
         <Grid container spacing={2}>
