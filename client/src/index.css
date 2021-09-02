@@ -163,7 +163,7 @@ input:focus {
 
 .heroImg {
   background-image: url(./assets/images/chefDrizzle.jpeg);
-  height: 80vh;
+  height: 100vh;
   width: auto;
   -webkit-background-size: cover;
   -moz-background-size: cover;
