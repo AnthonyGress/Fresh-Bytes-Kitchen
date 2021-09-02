@@ -7,7 +7,7 @@ const Menu = () => {
   return (
     <section id="menu">
       <Container>
-        <Typography align="center" variant="h1" style={{marginTop: "3rem", fontFamily: "IM Fell Double Pica, serif;"}}>
+        <Typography align="center" variant="h1" style={{paddingTop: "8rem"}}>
           {"Menu"}
         </Typography>
       </Container>

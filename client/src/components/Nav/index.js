@@ -158,11 +158,11 @@ export default function MenuAppBar() {
                         <Link to="/menu">Menu</Link>
                       </Typography>
                     </ListItemText>
-                    <ListItemText inset>
+                    {/* <ListItemText inset>
                       <Typography color="inherit">
                         <Link to="/contact">Contact</Link>
                       </Typography>
-                    </ListItemText>
+                    </ListItemText> */}
                   </ListItem>
                 </List>
               </Box>

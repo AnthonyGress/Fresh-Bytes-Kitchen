@@ -145,8 +145,7 @@ function CategoryMenu() {
 
   return (
     <div>
-      <Typography align="center" variant="h3" style={{marginTop: "5rem"}}>Choose a Category:</Typography>
-      <Container maxWidth="lg" style={{marginTop: "8rem"}}>
+      <Container maxWidth="lg" style={{marginTop: "5rem"}}>
         {categories.map((item) => (
           <Accordion
             expanded={expanded === item.name}

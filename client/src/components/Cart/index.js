@@ -1,4 +1,6 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
@@ -238,9 +240,26 @@ export default function CartDrawer() {
             </Grid>
           </Container>
         ) : (
-          <Typography align="center" variant="h5">
-            {"Cart is empty"}
-          </Typography>
+          <>
+            <Box mt={1}>
+              <Typography align="center" variant="h5">
+                {"You car is empty, add some items!"}
+              </Typography>
+            </Box>
+            <Link to="/menu">
+              <Box mt={2}>
+                <Button
+                  variant="contained"
+                  style={{ background: "var(--secondary)", minHeight: "36px" }}
+                  fullWidth={true}
+                  disabled={loading}
+                  onClick={handleDrawerClose}
+                >
+                  Menu
+                </Button>
+              </Box>
+            </Link>
+          </>
         )}
       </Drawer>
     </>
