@@ -23,24 +23,24 @@ db.once("open", async () => {
     {
       name: "Old Fashion",
       description:
-        "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
-      image: "old-fashioned.jpg",
+        "Kentucky bourbon, Angostura bitters, a sugar cube, a few cherries, an orange, and a lemon.",
       category: categories[0]._id,
+      image: "old-fashioned.jpg",
       price: 12.99,
     },
     {
       name: "Manhattan",
       description:
-        "Praesent sed lacinia mauris. Nulla congue nibh magna, at feugiat nunc scelerisque quis. Donec iaculis rutrum vulputate. Suspendisse lectus sem, vulputate ac lectus sed, placerat consequat dui.",
-      image: "manhattan.jpg",
+        "Grand Marnier, Bourbon, Dry Vermouth, Sweet Vermouth, Angostura Bitters, Orange Zest Twist, Maraschino Cherry Garnish.",
       category: categories[0]._id,
+      image: "manhattan2.jpeg",
       price: 10.99,
     },
     {
       name: "Cosmopolitan",
       category: categories[0]._id,
       description:
-        "Donec volutpat erat erat, sit amet gravida justo sodales in. Phasellus tempus euismod urna. Proin ultrices nisi ut ipsum congue, vitae porttitor libero suscipit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam lacinia a nisi non congue.",
+        "Vodka, Triple sec, Cranberry juice, Fresh Lime Juice.",
       image: "cosmopolitan.jpg",
       price: 10.99,
     },
@@ -48,15 +48,15 @@ db.once("open", async () => {
       name: "Moscow Mule",
       category: categories[0]._id,
       description:
-        "Praesent placerat, odio vel euismod venenatis, lectus arcu laoreet felis, et fringilla sapien turpis vestibulum nisl.",
-      image: "moscow-mule.png",
+        "Vodka, Spicy Ginger Beer, Fresh Lime Juice, Garnished With a Slice of Lime.",
+      image: "moscow-mule2.jpeg",
       price: 10.99,
     },
     {
       name: "Strawberry Gin Sour",
       category: categories[0]._id,
       description:
-        "Vivamus ut turpis in purus pretium mollis. Donec turpis odio, semper vel interdum ut, vulputate at ex. Duis dignissim nisi vel tortor imperdiet finibus. Aenean aliquam sagittis rutrum.",
+        "Strawberries, Gin, Elderflower Liqueur, Fresh Lime Juice, Egg White.",
       image: "gin-sour.jpg",
       price: 12.99,
     },
@@ -64,7 +64,7 @@ db.once("open", async () => {
       name: "Orange Blossom Pilsner (Orange Blossom Brewing Co.)",
       category: categories[1]._id,
       description:
-        "Vestibulum risus metus, luctus non tortor quis, tincidunt consectetur ex. Nullam vitae lobortis ligula, ut sagittis massa. Curabitur consectetur, tellus at pulvinar venenatis, erat augue cursus erat, eu ullamcorper eros lectus ultrices ipsum. Integer rutrum, augue vitae auctor venenatis, turpis turpis elementum orci, at sagittis risus mi a leo.",
+        "Honey Beer Made With Real, Local Orange Blossom Honey. //4.5% ABV//",
       image: "orange-blossom.jpg",
       price: 8.99,
     },
@@ -72,7 +72,7 @@ db.once("open", async () => {
       name: "McSwaggers Own (Crookerd Can Brewing Co.)",
       category: categories[1]._id,
       description:
-        "In sodales, ipsum quis ultricies porttitor, tellus urna aliquam arcu, eget venenatis purus ligula ut nisi. Fusce ut felis dolor. Mauris justo ante, aliquet non tempus in, tempus ac lorem. Aliquam lacinia dolor eu sem eleifend ultrices. Etiam mattis metus metus. Sed ligula dui, placerat non turpis vitae, suscipit volutpat elit. Phasellus sagittis, diam elementum suscipit fringilla, libero mauris scelerisque ex, ac interdum diam erat non sapien.",
+        "American Amber Ale. //6.0% ABV//",
       image: "mcswaggers.jpg",
       price: 7.99,
     },
@@ -80,7 +80,7 @@ db.once("open", async () => {
       name: "Dunedein Beer Flight",
       category: categories[1]._id,
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ornare diam quis eleifend rutrum. Aliquam nulla est, volutpat non enim nec, pharetra gravida augue. Donec vitae dictum neque. Pellentesque arcu lorem, fringilla non ligula ac, tristique bibendum erat. Ut a semper nibh. Quisque a mi et mi tempor ultricies. Maecenas eu ipsum eu enim hendrerit accumsan at euismod urna.",
+        "Apricot Peach Ale //6.0% ABV//, Red Head Red Ale //5.6% ABV//, and Local Honey //8.0% ABV//. ",
       image: "dunedin.jpg",
       price: 18.99,
     },
@@ -88,7 +88,7 @@ db.once("open", async () => {
       name: "Florida Cracker (Cigar City Brewing Co.)",
       category: categories[1]._id,
       description:
-        "Ut vulputate hendrerit nibh, a placerat elit cursus interdum.",
+        "White Ale With Unmalted Wheat, Orange Peel and Coriander. //5.5% ABV//",
       image: "cigar-city.jpg",
       price: 7.99,
     },
@@ -96,7 +96,7 @@ db.once("open", async () => {
       name: "Tropic Pressure (Big Storm Brewing Co.)",
       category: categories[1]._id,
       description:
-        "Sed a mauris condimentum, elementum enim in, rhoncus dui. Phasellus lobortis leo odio, sit amet pharetra turpis porta quis.",
+        "Florida Ale Steeped With Hibiscus Flowers And A Hint Of Cinnamon. //4.4% ABV//",
       image: "tropic-pressure.jpg",
       price: 7.99,
     },
@@ -104,7 +104,7 @@ db.once("open", async () => {
       name: "Cabernet Sauvignon",
       category: categories[2]._id,
       description:
-        "Vestibulum et erat finibus erat suscipit vulputate sed vitae dui. Ut laoreet tellus sit amet justo bibendum ultrices. Donec vitae felis vestibulum, congue augue eu, finibus turpis.",
+        "Dark Fruit Flavors And Savory Tastes From Black Pepper",
       image: "cabernet.jpg",
       price: 13.99,
     },
@@ -112,7 +112,7 @@ db.once("open", async () => {
       name: "Merlot",
       category: categories[2]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Red-Fruit Flavours (Cherry, Plum and Raspberry), Easy-Drinking Tannins and Super-Soft Finish.",
       image: "merlot.jpg",
       price: 12.99,
     },
@@ -120,7 +120,7 @@ db.once("open", async () => {
       name: "Pinot Noir",
       category: categories[2]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Bright Acidity, Silky Tannins, Cherry, Raspberry, Mushroom Plus Vanilla",
       image: "pinot.jpg",
       price: 12.99,
     },
@@ -128,7 +128,7 @@ db.once("open", async () => {
       name: "Sauvignon Blanc",
       category: categories[2]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Dry White With Tropical, Tree And Citrus Fruit Flavors",
       image: "sauvignon.jpg",
       price: 11.99,
     },
@@ -136,7 +136,7 @@ db.once("open", async () => {
       name: "Reisling",
       category: categories[2]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Aromatic White Wine That Boasts Crisp Flavors Of Apples, Apricots, Peaches, And Pears.",
       image: "reisling.jpg",
       price: 11.99,
     },
@@ -144,7 +144,7 @@ db.once("open", async () => {
       name: "Korean Double Crunch Wings",
       category: categories[3]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Double Fried, Crunchy, And Crispy Korean Chicken Wings Covered in Either Sweet Gochujang Sauce or Sticky Soy Garlic Sauce",
       image: "korean-wings.jpg",
       price: 11.99,
     },
@@ -152,7 +152,7 @@ db.once("open", async () => {
       name: " Chili Garlic Edamame",
       category: categories[3]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Steamed Edamame in a Spicy Chili Garlic Sauce",
       image: "edamame.jpg",
       price: 8.99,
     },
@@ -160,7 +160,7 @@ db.once("open", async () => {
       name: "Avacodo Eggrolls",
       category: categories[3]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Avocado, Sun-Dried Tomato, Red Onion and Cilantro Fried in a Crisp Wrapper. Served with a Tamarind-Cashew Dipping Sauce.",
       image: "avocado-eggrolls.jpg",
       price: 13.99,
     },
@@ -168,7 +168,7 @@ db.once("open", async () => {
       name: "Truffle Fries",
       category: categories[3]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Crispy Fries Covered In Parmasan, Lemon, Garlic, and Truffle Oil.",
       image: "truffle.jpg",
       price: 14.99,
     },
@@ -176,7 +176,7 @@ db.once("open", async () => {
       name: "Fried Mozzarella",
       category: categories[3]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Golden Fried Mozzarella Mixed With Italian Herbs",
       image: "fried-mozzarella.jpg",
       price: 10.99,
     },
@@ -184,7 +184,7 @@ db.once("open", async () => {
       name: "Caprese Bites",
       category: categories[4]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Layers Of Cherry Tomato, Basil Leaf, And Marinated Mozzarella On A Skewer With Balsamic Glaze.",
       image: "caprese.jpg",
       price: 12.99,
     },
@@ -192,7 +192,7 @@ db.once("open", async () => {
       name: "Steak and Burrata",
       category: categories[4]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Creamy Burrata On Top Of Garlicky Sourdough Toasts, And Perfectly Cooked Hanger Steak Topped With Pepper Flakes, Chives And A Drizzle Of Balsamic Vinegar.",
       image: "steak-burrata.jpg",
       price: 27.99,
     },
@@ -200,7 +200,7 @@ db.once("open", async () => {
       name: "Lemon Ginger Chicken Skewers",
       category: categories[4]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Ginger Marinated Chicken Skewers Drizzled With Honey and Roasted Lemon Jucie.",
       image: "lemon-chicken.jpg",
       price: 21.99,
     },
@@ -208,7 +208,7 @@ db.once("open", async () => {
       name: "Iberico Pork",
       category: categories[4]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Tender And Juicy Pork Served With Crispy Golden Potatoes.",
       image: "pork.jpg",
       price: 16.99,
     },
@@ -216,7 +216,7 @@ db.once("open", async () => {
       name: "Flaming Cheese",
       category: categories[4]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Saganaki Cheese Lit On Fire.",
       image: "flaming-cheese.jpg",
       price: 9.99,
     },
@@ -224,15 +224,15 @@ db.once("open", async () => {
       name: "Lamb Chops",
       category: categories[5]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Rubbed With Fresh Thyme, Seared In A Hot Skillet, And Topped With A Decadent Pan Sauce Flavored With Dry White Wine, A Squeeze Of Lemon Juice, And A Knob Of Butter.",
       image: "lamb.jpg",
       price: 36.99,
     },
     {
-      name: "Cajun Butter Lobster Tails",
+      name: "Cajun Garlic Butter Lobster Tails",
       category: categories[5]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Fresh Lobster Tails drenched in our Famous Cajun Garlic Butter.",
       image: "lobster.jpg",
       price: 42.99,
     },
@@ -240,7 +240,7 @@ db.once("open", async () => {
       name: "Tuna and Yellow-Tail Poke",
       category: categories[5]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Diced cucumbers, Chilies, and Avocado Mixed with Roasted Sesame Yellow-Fin Tuna. All Served Over Sushi Rice",
       image: "tuna-poke.jpg",
       price: 29.99,
     },
@@ -248,7 +248,7 @@ db.once("open", async () => {
       name: "Prawn and Black Truffle Pasta",
       category: categories[5]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Pappardelle Pasta and Large Prawns Served In A Cream-Based Sauce With Butter, Garlic, Cherry Tomatoes, Lime, Truffle Oil And Shallots.",
       image: "shrimp-pasta.jpg",
       price: 30.99,
     },
@@ -256,7 +256,7 @@ db.once("open", async () => {
       name: "Parmasan Crusted Swordfish Steak",
       category: categories[5]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Crispy Parmesan Swordfish With Creamy Garlic Aioli Dipping Sauce",
       image: "swordfish.jpg",
       price: 32.99,
     },
@@ -264,7 +264,7 @@ db.once("open", async () => {
       name: "Filet Mignon",
       category: categories[6]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "8oz Filet Served With Creamy Mashed Potatos, Steamed Asparagus, and Pan-Seared Shallots.",
       image: "filet-mignon.jpg",
       price: 45.99,
     },
@@ -272,7 +272,7 @@ db.once("open", async () => {
       name: "Cacio De Pepe",
       category: categories[6]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Pasta, Four Cheese Italian Blend, Black Pepper And Butter.",
       image: "cacio.jpg",
       price: 25.99,
     },
@@ -280,7 +280,7 @@ db.once("open", async () => {
       name: "Sesame Glazed Salmon",
       category: categories[6]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Salmon Fillets In A Tangy glaze - Sprinkle With Sesame Seeds.",
       image: "salmon.jpg",
       price: 29.99,
     },
@@ -288,7 +288,7 @@ db.once("open", async () => {
       name: "Stuffed Lemon Garlic Chicken",
       category: categories[6]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Stuffed With Cheddar And Cream Cheeses, Then Drenched In A Garlic-Lemon-Butter Sauce.",
       image: "stuffed-chicken.jpg",
       price: 23.99,
     },
@@ -296,7 +296,7 @@ db.once("open", async () => {
       name: "Caesar Salad",
       category: categories[6]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Fresh Crisp Romaine Lettuce, Garlic Crutons, Grated Parmesan Cheese, and Grilled Chicken Breast.",
       image: "caesar-salad.jpg",
       price: 18.99,
     },
@@ -304,7 +304,7 @@ db.once("open", async () => {
       name: "Pumpkin Cheesecake",
       category: categories[7]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Creamy New York Style Cheesecake Swirled With Pumpkin Pie.",
       image: "cheesecake.jpg",
       price: 12.99,
     },
@@ -312,7 +312,7 @@ db.once("open", async () => {
       name: "Chocolate Cake",
       category: categories[7]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Death By Chocolate, Triple Layers Of Rich Chocolate Cake and Chocolate Ganache.",
       image: "chocolate-cake.jpg",
       price: 11.99,
     },
@@ -320,7 +320,7 @@ db.once("open", async () => {
       name: "Tirimisu",
       category: categories[7]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Espresso-Soaked Ladyfingers Surrounded By Lightly Sweetened Whipped Cream And A Rich Mascarpone.",
       image: "tiramisu.jpg",
       price: 12.99,
     },
@@ -328,7 +328,7 @@ db.once("open", async () => {
       name: "Zeppole",
       category: categories[7]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Fried Dough Balls Coated In POwdered Sugar and drizzled With A Red Wine Reduction.",
       image: "zeppole.jpg",
       price: 13.99,
     },
@@ -336,7 +336,7 @@ db.once("open", async () => {
       name: "Passion Fruit Mousse",
       category: categories[7]._id,
       description:
-        "Morbi consectetur viverra urna, eu fringilla turpis faucibus sit amet. Suspendisse potenti. Donec at dui ac sapien eleifend hendrerit vel sit amet lectus.",
+        "Creamy Tropical Fruity Mousse With A Rasbery Drizzle.",
       image: "passionfruit.jpg",
       price: 13.99,
     },
