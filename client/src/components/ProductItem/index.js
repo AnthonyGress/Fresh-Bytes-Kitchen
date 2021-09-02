@@ -46,6 +46,7 @@ function ProductItem(item) {
           alt={name}
           src={`/images/${image}`}
           height={367.25}
+          width={367.25}
         />
         <p>{name}</p>
       </Link>
