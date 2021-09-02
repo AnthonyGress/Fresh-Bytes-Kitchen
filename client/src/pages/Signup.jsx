@@ -101,6 +101,7 @@ function Signup(props) {
           >
             <Box className="d-flex align-items-center col">
               <TextField
+                autoComplete="given-name"
                 style={{ width: "100%" }}
                 variant="outlined"
                 placeholder="First"
@@ -120,6 +121,7 @@ function Signup(props) {
                 }}
               />
               <TextField
+                autoComplete="family-name"
                 style={{ width: "100%" }}
                 variant="outlined"
                 placeholder="Last"
@@ -139,6 +141,7 @@ function Signup(props) {
                 }}
               />
               <TextField
+                autoComplete="email"
                 style={{ width: "100%" }}
                 variant="outlined"
                 placeholder="Email"
@@ -158,6 +161,7 @@ function Signup(props) {
                 }}
               />
               <TextField
+                autoComplete="new-password"
                 style={{ width: "100%" }}
                 variant="outlined"
                 placeholder="Password"
