@@ -4,6 +4,7 @@ import { pluralize } from "../../utils/helpers"
 import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
+import Typography from "@material-ui/core/Typography";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -48,11 +49,13 @@ function ProductItem(item) {
           height={367.25}
           width={367.25}
         />
-        <p>{name}</p>
+        <Typography style={{color: 'whitesmoke'}}>
+          {name}
+        </Typography>
       </Link>
       <div>
-        <div>{quantity} {pluralize("item", quantity)} in stock</div>
-        <span>${price}</span>
+        {/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
+        <span style={{color: 'whitesmoke'}}>${price}</span>
       </div>
       <button onClick={addToCart}>Add to cart</button>
     </div>
