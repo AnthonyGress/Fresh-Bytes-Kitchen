@@ -52,7 +52,7 @@ function OrderHistory() {
       {user ? (
         <>
           <Typography align="center" variant="h3">
-            {`Order History for ${user.firstName} ${user.lastName}`}
+            {`${user.firstName}'s Past Orders `}
           </Typography>
           <Box ml={3} mr={3} mt={2}>
             {user.orders.map((order) => (
