@@ -18,6 +18,7 @@ import { StoreProvider } from "./utils/GlobalState";
 import Success from "./pages/Success";
 import OrderHistory from "./pages/OrderHistory";
 import Menu from "./pages/Menu";
+import Order from "./pages/Order";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Account from "./pages/Account";
@@ -56,6 +57,7 @@ function App() {
               <Route exact path="/signup" component={Signup} />
               <Route exact path="/success" component={Success} />
               <Route exact path="/menu" component={Menu} />
+              <Route exact path="/order" component={Order} />
               <Route exact path="/contact" component={Contact} />
               <Route exact path="/account" component={Account} />
               <Route exact path="/orderHistory" component={OrderHistory} />
