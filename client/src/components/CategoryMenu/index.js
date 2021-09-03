@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   catOptionTitle: {
     color: "#ffcd27",
-    fontSize: "2em",
+    fontSize: "1.5em",
     fontFamily: "'Courgette', cursive",
   },
 }));
@@ -151,7 +151,7 @@ function CategoryMenu() {
 
   return (
     <div>
-      <Container maxWidth="lg" style={{ marginTop: "5rem" }}>
+      <Container maxWidth="lg" style={{ marginTop: "2rem" }}>
         {categories.map((item) => (
           <Accordion
             expanded={expanded === item.name}
