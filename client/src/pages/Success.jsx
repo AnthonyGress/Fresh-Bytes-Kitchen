@@ -42,7 +42,7 @@ function Success() {
       }
 
       setTimeout(() => {
-        // window.location.assign("/");
+        window.location.assign("/");
       }, 3000);
     }
 
