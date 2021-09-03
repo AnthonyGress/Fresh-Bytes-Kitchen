@@ -103,9 +103,9 @@ function DrawerComponent() {
             onClick={() => setOpenDrawer(false)}
             className={classes.nav}
           >
-            {/* <ListItemText>
-              <Link to="/contact">Contact</Link>
-            </ListItemText> */}
+            <ListItemText>
+              <Link to="/order">Order</Link>
+            </ListItemText>
           </ListItem>
         </List>
       </Drawer>
