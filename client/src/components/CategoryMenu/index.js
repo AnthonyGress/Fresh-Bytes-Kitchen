@@ -160,13 +160,15 @@ function CategoryMenu() {
             className={classes.catOption}
             onClick={() => {
               handleClick(item._id);
-              scrollToTop();
             }}
           >
             <AccordionSummary
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel1bh-content"
               id={item.name}
+              onClick={() => {
+              scrollToTop();
+            }}
             >
               <Typography className={classes.catOptionTitle}>
                 {item.name}
