@@ -111,9 +111,9 @@ export default function CartDrawer() {
   //   dispatch({ type: TOGGLE_CART });
   // }
 
-  function clearCart() {
-    dispatch({ type: CLEAR_CART });
-  }
+  // function clearCart() {
+  //   dispatch({ type: CLEAR_CART });
+  // }
 
   function calculateTotal() {
     let sum = 0;
@@ -244,9 +244,9 @@ export default function CartDrawer() {
               )} */}
               {/* <button onClick={submitCheckout}>Checkout</button> */}
             </Grid>
-            <Box>
+            {/* <Box>
               <Button onClick={clearCart}>Clear Cart</Button>
-            </Box>
+            </Box> */}
           </Container>
         ) : (
           <>
@@ -255,8 +255,8 @@ export default function CartDrawer() {
                 {"You car is empty, add some items!"}
               </Typography>
             </Box>
-            <Link to="/menu">
-              <Box mt={2}>
+            <Link to="/order">
+              <Box mt={2} mr={2} ml={2}>
                 <Button
                   variant="contained"
                   style={{ background: "var(--secondary)", minHeight: "36px" }}
@@ -264,7 +264,7 @@ export default function CartDrawer() {
                   disabled={loading}
                   onClick={handleDrawerClose}
                 >
-                  Menu
+                  Order
                 </Button>
               </Box>
             </Link>
