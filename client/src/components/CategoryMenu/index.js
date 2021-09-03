@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "30px 30px 30px 30px",
   },
   catOptionProducts: {
-    backgroundImage: `url(${Wood})`,
+    backgroundColor: "white"
   },
   catOptionTitle: {
     color: "#ffcd27",
@@ -74,7 +74,7 @@ function CategoryMenu() {
   };
 
   const scrollToTop = () => {
-    window.scrollTo(0,250);
+    window.scrollTo(0,150);
   }
   // <div>
   //     <h2>Choose a Category:</h2>

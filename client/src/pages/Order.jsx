@@ -8,7 +8,7 @@ const Order = () => {
   return (
     <section id="menu">
       <Container>
-        <Typography align="center" variant="h1" style={{paddingTop: "6rem", fontFamily: font}}> 
+        <Typography align="center" variant="h1" style={{paddingTop: "5rem", fontFamily: font}}> 
           {"Menu"}
         </Typography>
       </Container>
