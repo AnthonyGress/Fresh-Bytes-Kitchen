@@ -30,43 +30,6 @@ const Home = () => {
   return (
     <section id="home">
       <Box className="heroImg"></Box>
-      {/* <Paper className={classes.paper}>
-        <Grid container spacing={2}>
-          <Grid item xs={8}>
-            <HomeMap />
-          </Grid>
-          <Grid item xs={6} sm container>
-            <Grid item xs container direction="column" spacing={2}>
-              <Grid item>
-                <Typography gutterBottom borderBottom={1} variant="h4">
-                  Restaraunt Hours
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Mon  Closed
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Tue 11:00 AM - 9:00 PM
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Wed 11:00 AM - 9:00 PM
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Thu 11:00 AM - 12:00 AM
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Fri 11:00 AM - 12:00 AM
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Sat 11:00 AM - 12:00 AM
-                </Typography>
-                <Typography variant="body2" gutterBottom>
-                  Sun 11:00 AM - 9:00 PM
-                </Typography>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Paper> */}
     </section>
   );
 };
