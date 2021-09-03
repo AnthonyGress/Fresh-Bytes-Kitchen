@@ -149,7 +149,7 @@ db.once("open", async () => {
       price: 11.99,
     },
     {
-      name: " Chili Garlic Edamame",
+      name: "Chili Garlic Edamame",
       category: categories[3]._id,
       description:
         "Steamed Edamame in a Spicy Chili Garlic Sauce",
