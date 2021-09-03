@@ -43,11 +43,11 @@ function ProductItem(item) {
           height={367.25}
           width={367.25}
         />
-        <Typography style={{ color: "whitesmoke" }}>{name}</Typography>
+        <Typography>{name}</Typography>
       </Link>
       <div>
         {/* <div>{quantity} {pluralize("item", quantity)} in stock</div> */}
-        <span style={{ color: "whitesmoke" }}>${price}</span>
+        <span>${price}</span>
       </div>
       <button onClick={addToCart}>Add to cart</button>
     </div>

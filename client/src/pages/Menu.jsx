@@ -7,7 +7,7 @@ import Page4 from '../assets/images/4.png';
 
 const Menu = () => {
     return (
-        <div>
+        <div align='center'>
             <div>
                 <img src={Page1} alt='Menu page 1' style={{paddingTop: '3rem'}}/>
             </div>
