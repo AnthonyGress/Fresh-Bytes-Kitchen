@@ -5,6 +5,8 @@ import { useStoreContext } from "../../utils/GlobalState";
 import { ADD_TO_CART, UPDATE_CART_QUANTITY } from "../../utils/actions";
 import { idbPromise } from "../../utils/helpers";
 import Typography from "@material-ui/core/Typography";
+import Box from "@material-ui/core/Box";
+import { Alert } from "@material-ui/lab/";
 
 function ProductItem(item) {
   const [state, dispatch] = useStoreContext();
@@ -14,6 +16,7 @@ function ProductItem(item) {
   const { cart } = state;
 
   const addToCart = () => {
+    console.log(cart);
     const itemInCart = cart.find((cartItem) => cartItem._id === _id);
     if (itemInCart) {
       dispatch({
