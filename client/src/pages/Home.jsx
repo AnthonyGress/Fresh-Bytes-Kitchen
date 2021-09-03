@@ -5,6 +5,8 @@ import Typography from "@material-ui/core/Typography";
 import HomeMap from "../components/HomeMap";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import Carousel from 'react-material-ui-carousel'
+import Item from 'react-material-ui-carousel'
 import HeroCard from "../components/HeroCard";
 
 const useStyles = makeStyles((theme) => ({
@@ -28,8 +30,8 @@ const Home = () => {
 
   return (
     <section id="home">
-      {/* <HeroCard /> */}
-      <Box className="heroImg"></Box>
+      <HeroCard />
+      {/* <Box className="heroImg"></Box> */}
     </section>
   );
 };

@@ -9,7 +9,7 @@ const Menu = () => {
     return (
         <div align='center'>
             <div>
-                <img src={Page1} alt='Menu page 1' style={{paddingTop: '3rem'}}/>
+                <img src={Page1} alt='Menu page 1' style={{paddingTop: '5rem'}}/>
             </div>
             <div>
                 <img src={Page2} alt='Menu page 2'/>
