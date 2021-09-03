@@ -17,17 +17,18 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import { Container } from "@material-ui/core";
 import Wood from "../../assets/images/black-wood.jpeg";
 
+
 const useStyles = makeStyles((theme) => ({
   catOption: {
     backgroundColor: "#c82427",
     borderRadius: "30px 30px 30px 30px",
   },
   catOptionProducts: {
-    backgroundImage: `url(${Wood})`,
+    backgroundColor: "white"
   },
   catOptionTitle: {
     color: "#ffcd27",
-    fontSize: "2em",
+    fontSize: "1.5em",
     fontFamily: "'Courgette', cursive",
   },
 }));
@@ -72,6 +73,9 @@ function CategoryMenu() {
     });
   };
 
+  const scrollToTop = () => {
+    window.scrollTo(0,150);
+  }
   // <div>
   //     <h2>Choose a Category:</h2>
   //     {categories.map((item) => (
@@ -147,7 +151,7 @@ function CategoryMenu() {
 
   return (
     <div>
-      <Container maxWidth="lg" style={{ marginTop: "5rem" }}>
+      <Container maxWidth="lg" style={{ marginTop: "2rem" }}>
         {categories.map((item) => (
           <Accordion
             expanded={expanded === item.name}
@@ -156,6 +160,7 @@ function CategoryMenu() {
             className={classes.catOption}
             onClick={() => {
               handleClick(item._id);
+              scrollToTop();
             }}
           >
             <AccordionSummary
