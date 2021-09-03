@@ -5,6 +5,7 @@ import Page3 from "../assets/images/3.png";
 import Page4 from "../assets/images/4.png";
 
 const Menu = () => {
+
   return (
     <div align="center">
       <div>

@@ -258,6 +258,12 @@ input:focus {
   flex-direction: column;
 }
 
+#home {
+  background: url(../src/assets/images/chefDrizzle.jpeg);
+  background-size: cover;
+  min-height: 100vh;
+}
+
 #menu {
   background: url(../src/assets/images/red-restaurant.jpg);
   background-size: cover;
